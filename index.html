@@ -1388,6 +1388,7 @@
           <a class="mBtn gold" id="mn-loc" href="#">🏠 LOC</a>
           <a class="mBtn gold" id="mn-resatable" href="#">📅 RÉSA MULTI-BUSINESS</a>
           <a class="mBtn gold" id="mn-build" href="#">🏗️ Build</a>
+          <a class="mBtn gold" id="mn-mon-commerce" href="#">👜 Mon Commerce</a>
           <a class="mBtn gold" id="mn-market" href="#">🛍️ Market</a>
           <a class="mBtn gold" id="mn-jobs" href="#">💼 Jobs</a>
           <a class="mBtn gold" id="mn-ndimbal-annonces" href="#">📢 NDIMBAL Annonces</a>
@@ -1499,10 +1500,17 @@
                     Artisans, chantiers, savoir-faire terrain — construire ici.
                   </div>
                 </a>
+                <a class="gate" id="gate-mon-commerce" href="#public">
+                  <div class="gate-icon">👜</div>
+                  <div class="gate-body">
+                    <strong>MON COMMERCE</strong>
+                    Boutiques mode, sacs, chaussures — caisse élégante, image forte.
+                  </div>
+                </a>
               </div>
 
               <div class="manifesto">
-                <strong>EXPLORE attire. DRIVER transporte. LOC héberge. RESA organise.</strong><br>
+                <strong>EXPLORE attire. DRIVER transporte. LOC héberge. RÉSA organise. BUILD construit. MON COMMERCE tient debout.</strong><br>
                 Le commerce et l'échange viennent naturellement après l'ancrage dans le lieu.
               </div>
             </div>
@@ -1772,6 +1780,7 @@
     audio:"https://beauville.github.io/digiy-audio/",
     assistantIA:"https://knowledge.digiylyfe.com/widget/",
     build:"https://build.digiylyfe.com/",
+    monCommerce:"https://mon-commerce.digiylyfe.com/",
     tarifs:"https://tarifs.digiylyfe.com/",
     espacePro:"https://pro-espace.digiylyfe.com/",
     inscriptionPro:"https://commencer-a-payer.digiylyfe.com/",
@@ -1794,6 +1803,7 @@
     {key:"loc",        name:"DIGIY LOC",              icon:"🏠", desc:"Trouver un logement chez le pro",       status:"LIVE"},
     {key:"resaTable",  name:"RÉSA MULTI-BUSINESS",    icon:"📅", desc:"Réserver un rendez-vous ou un service", status:"LIVE"},
     {key:"build",      name:"DIGIY BUILD",            icon:"🏗️", desc:"Artisans & services de construction",   status:"BETA"},
+    {key:"monCommerce",name:"MON COMMERCE",           icon:"👜", desc:"Caisse élégante pour boutiques & mode",  status:"LIVE"},
     {key:"market",     name:"DIGIY MARKET",           icon:"🛍️", desc:"Acheter / vendre — échanges locaux",    status:"LIVE"},
     {key:"jobs",       name:"DIGIY JOBS",             icon:"💼", desc:"Offres d'emploi",                      status:"LIVE"},
     {key:"ndimbalAnnonces",name:"NDIMBAL Annonces",   icon:"📢", desc:"Publier / vendre",                     status:"LIVE"},
@@ -1826,6 +1836,7 @@
     loc:"DIGIY LOC donne accès directement au logement chez le propriétaire. Sans intermédiaire, paiement direct, relation humaine.",
     resaTable:"RÉSA MULTI-BUSINESS simplifie la prise de rendez-vous et la réservation de services avec une porte claire et rapide.",
     build:"DIGIY BUILD valorise les artisans et les services terrain. Le savoir-faire local mérite sa propre vitrine.",
+    monCommerce:"MON COMMERCE donne à la boutique locale une caisse à sa hauteur. Mode, sacs, chaussures, parfums — le commerce de quartier mérite du style, de la tenue et une image forte face aux grandes enseignes.",
     market:"DIGIY MARKET sert l'échange commercial local — la boutique, la vente, l'offre. Il vient après l'ancrage dans le territoire.",
     jobs:"DIGIY JOBS aide à voir les opportunités d'emploi à tête reposée, après les besoins terrain immédiats.",
     ndimbalAnnonces:"NDIMBAL Annonces sert de hub pour publier, diffuser et vendre dans une logique d'action directe.",
@@ -2048,7 +2059,8 @@
     "gate-driver":L.driver,
     "gate-loc":L.loc,
     "gate-resa":L.resaTable,
-    "gate-build":L.build
+    "gate-build":L.build,
+    "gate-mon-commerce":L.monCommerce
   };
   Object.entries(gateLinks).forEach(([id,url])=>{
     const el=$(id);
@@ -2064,6 +2076,7 @@
     "mn-chauffeurs":L.galerieChauffeurs,
     "mn-jobs":L.jobs,
     "mn-build":L.build,
+    "mn-mon-commerce":L.monCommerce,
     "mn-ndimbal-annonces":L.ndimbalAnnonces,
     "mn-pay":L.pay,
     "mn-vaschezmoi":L.vasChezDigiy,
