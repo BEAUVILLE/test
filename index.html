@@ -1,123 +1,661 @@
-Après les trajets en voiture et la livraison de repas, Uber avance désormais vers les réservations d’hôtel. Ce mouvement n’est pas anodin. Il montre une chose simple : le futur des grandes applications n’est plus limité à un seul service.
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>DIGIYLYFE — Diaporama TikTok HTML</title>
+  <meta name="theme-color" content="#00853f"/>
+  <meta name="description" content="Diaporama DIGIYLYFE testable sur GitHub Pages avec slides, textes et voix navigateur."/>
+  <style>
+    :root{
+      --green:#00853f;
+      --green2:#00a651;
+      --gold:#f6c453;
+      --ink:#f8fafc;
+      --muted:rgba(248,250,252,.76);
+      --bg:#06140f;
+      --line:rgba(255,255,255,.14);
+      --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    }
 
-Le monde va vers des écosystèmes.
+    *{box-sizing:border-box}
 
-Se déplacer, manger, dormir, réserver, payer, découvrir, acheter : les grandes plateformes veulent relier tous ces gestes du quotidien dans une seule application. Elles ne vendent plus seulement un service. Elles cherchent à organiser tout un parcours de vie.
+    html,body{
+      margin:0;
+      min-height:100%;
+      font-family:var(--font);
+      background:
+        radial-gradient(900px 520px at 10% 0%,rgba(0,166,81,.30),transparent 58%),
+        radial-gradient(760px 500px at 90% 0%,rgba(246,196,83,.16),transparent 55%),
+        linear-gradient(180deg,#067a3a 0%,#083123 48%,#04130d 100%);
+      color:var(--ink);
+    }
 
-Mais une question devient centrale :
+    body{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      padding:18px;
+    }
 
-Qui possède la relation avec le client ?
+    .page{
+      width:min(1180px,100%);
+      display:grid;
+      grid-template-columns:minmax(320px,420px) minmax(0,1fr);
+      gap:18px;
+      align-items:start;
+    }
 
-Deux visions opposées
-La phrase stratégique est simple :
+    .phone{
+      width:min(420px,100%);
+      margin:0 auto;
+      aspect-ratio:9/16;
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.20);
+      background:#000;
+      box-shadow:0 26px 80px rgba(0,0,0,.42);
+      position:relative;
+    }
 
-Uber veut que le client reste dans Uber.
-DIGIY veut que le client arrive chez le professionnel.
+    .stage{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      background:#07130f;
+    }
 
-C’est là que les deux visions se séparent.
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:scale(1);
+      transition:opacity .9s ease;
+      background:#07130f;
+    }
 
-Pour Uber, l’hôtel devient un produit dans son application.
-Pour DIGIYLYFE, le logement, le chauffeur, le commerce, le service, le guide, le restaurant ou la réservation deviennent des présences digitales appartenant aux acteurs locaux.
+    .slide.active{
+      opacity:1;
+      z-index:2;
+    }
 
-Ce n’est pas la même logique.
+    .slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.04) contrast(1.02);
+    }
 
-D’un côté, une grande plateforme centralise l’attention, la relation, les données et souvent la transaction.
-De l’autre, DIGIYLYFE donne aux professionnels du terrain une présence simple, directe et utile, pour que le client les trouve, les contacte et les paie directement.
+    .slide.active.zoom-in img{
+      animation:zoomIn 8s linear forwards;
+    }
 
-Super-app de plateforme ou super-écosystème local ?
-Uber avance vers une super-app de plateforme.
+    .slide.active.zoom-out img{
+      animation:zoomOut 8s linear forwards;
+    }
 
-DIGIYLYFE construit un super-écosystème local.
+    .slide.active.pan img{
+      animation:panMove 8s linear forwards;
+    }
 
-La différence est profonde.
+    @keyframes zoomIn{
+      from{transform:scale(1)}
+      to{transform:scale(1.14)}
+    }
 
-Dans une super-app de plateforme, le professionnel risque de devenir une ressource dans une grande machine. Il est visible tant que l’algorithme le met en avant. Il reçoit des clients, mais la relation reste souvent capturée par l’application.
+    @keyframes zoomOut{
+      from{transform:scale(1.16)}
+      to{transform:scale(1)}
+    }
 
-Dans un super-écosystème local, le professionnel garde son nom, son lien, son QR, son client et son argent.
+    @keyframes panMove{
+      from{transform:scale(1.08) translateX(-2%)}
+      to{transform:scale(1.16) translateX(2%)}
+    }
 
-C’est cette différence qui donne tout son sens à la ligne DIGIYLYFE :
+    .shade{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:34%;
+      z-index:5;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.88));
+      pointer-events:none;
+    }
 
-0% commission.
-Paiement direct.
-Présence digitale simple.
-QR terrain.
-Outils métier.
-Mon argent.
-Je loue.
-Je conduis.
-Je vends.
-Je réserve.
-Je propose mes services.
-Je fais découvrir mon lieu.
+    .brandTop{
+      position:absolute;
+      top:18px;
+      left:18px;
+      right:18px;
+      z-index:7;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
 
-DIGIYLYFE ne cherche pas à remplacer le professionnel.
-DIGIYLYFE l’équipe.
+    .brandMark{
+      width:42px;
+      height:42px;
+      border-radius:13px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.28);
+      background:linear-gradient(135deg,var(--green2),var(--green));
+      display:grid;
+      place-items:center;
+      box-shadow:0 8px 22px rgba(0,0,0,.30);
+      flex:0 0 auto;
+    }
 
-Le business du quotidien relié en écosystème
-Ce qui se dessine aujourd’hui, ce n’est pas seulement une nouvelle application. C’est une nouvelle organisation du quotidien.
+    .brandMark img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-Le client ne veut pas dix applications séparées.
-Il veut trouver, comprendre, contacter, réserver, payer et avancer simplement.
+    .brandText{
+      min-width:0;
+    }
 
-Le professionnel local, lui, ne veut pas devenir ingénieur.
-Il veut un bouton clair, un lien, un QR, un outil simple, et recevoir son argent directement.
+    .brandName{
+      font-weight:950;
+      letter-spacing:.05em;
+      line-height:1;
+      font-size:14px;
+      text-shadow:0 2px 10px rgba(0,0,0,.45);
+    }
 
-C’est exactement le terrain où DIGIYLYFE prend son sens.
+    .brandSub{
+      margin-top:3px;
+      font-size:10px;
+      color:#fff3cf;
+      font-weight:850;
+      text-shadow:0 2px 8px rgba(0,0,0,.42);
+    }
 
-Se déplacer.
-Dormir.
-Vendre.
-Encaisser.
-Réserver.
-Travailler.
-Proposer un service.
-Faire découvrir un lieu.
-Garder la trace de l’argent.
+    .caption{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:34px;
+      z-index:8;
+      text-align:center;
+    }
 
-Ce n’est pas une dispersion.
-C’est une cartographie de la vie économique réelle.
+    .line{
+      opacity:0;
+      transform:translateY(10px);
+      font-weight:950;
+      line-height:1.08;
+      letter-spacing:-.03em;
+      text-shadow:0 3px 15px rgba(0,0,0,.62);
+      margin:5px 0;
+    }
 
-La différence : capturer ou rendre autonome
-Les grandes plateformes diversifient leurs services pour capturer le parcours client.
+    .active .line.show{
+      animation:fadeUp .55s ease forwards;
+    }
 
-DIGIYLYFE diversifie ses outils pour rendre le terrain visible et autonome.
+    @keyframes fadeUp{
+      to{opacity:1;transform:translateY(0)}
+    }
 
-Et ça change tout.
+    .line.white{color:#fff}
+    .line.gold{color:var(--gold)}
+    .line.small{font-size:15px;letter-spacing:0}
+    .line.medium{font-size:21px}
+    .line.big{font-size:26px}
+    .line.xbig{font-size:31px}
 
-Le futur n’est pas seulement “IA” ou “plateforme”.
-Le futur, c’est l’orchestration intelligente du quotidien : simple devant, puissant derrière.
+    .progress{
+      position:absolute;
+      left:0;
+      bottom:0;
+      height:5px;
+      width:0%;
+      background:linear-gradient(90deg,var(--green2),var(--gold));
+      z-index:12;
+      box-shadow:0 0 18px rgba(246,196,83,.55);
+    }
 
-Mais cette orchestration peut prendre deux chemins.
+    .progress.run{
+      animation:progressRun 22s linear forwards;
+    }
 
-Elle peut enfermer les professionnels dans des systèmes où ils dépendent d’un algorithme, d’une commission, d’un classement, d’une plateforme centrale.
+    @keyframes progressRun{
+      from{width:0%}
+      to{width:100%}
+    }
 
-Ou elle peut leur donner une présence digitale claire, des outils simples, un lien direct avec leurs clients, et la maîtrise de leur activité.
+    .panel{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg,rgba(8,35,25,.88),rgba(4,19,13,.92));
+      box-shadow:0 18px 60px rgba(0,0,0,.30);
+      padding:18px;
+    }
 
-DIGIYLYFE choisit le deuxième chemin.
+    .kicker{
+      display:inline-flex;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid rgba(246,196,83,.35);
+      background:rgba(246,196,83,.10);
+      color:#fff3cf;
+      font-size:11px;
+      font-weight:950;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
 
-Une réponse locale à une transformation mondiale
-DIGIYLYFE n’est pas une copie des grandes plateformes.
+    h1{
+      margin:12px 0 8px;
+      font-size:clamp(26px,4vw,44px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
 
-C’est une réponse locale, humaine et souveraine à la même grande transformation.
+    .lead{
+      color:var(--muted);
+      line-height:1.65;
+      margin:0 0 14px;
+      font-size:15px;
+    }
 
-Le monde va vers des applications qui relient plusieurs gestes de vie. Mais la vraie question n’est plus seulement : “quelle application va tout faire ?”
+    .controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:16px 0;
+    }
 
-La vraie question est :
+    button,.btn{
+      border:0;
+      cursor:pointer;
+      border-radius:999px;
+      padding:13px 16px;
+      font-weight:950;
+      color:#07130f;
+      background:linear-gradient(135deg,var(--gold),#fff0b0);
+      box-shadow:0 10px 26px rgba(0,0,0,.22);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:14px;
+    }
 
-Est-ce que la technologie va capturer le terrain, ou l’aider à reprendre la main ?
+    button.secondary,.btn.secondary{
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:none;
+    }
 
-DIGIYLYFE est né pour cette deuxième réponse.
+    button.green,.btn.green{
+      background:linear-gradient(135deg,var(--green2),var(--green));
+      color:#fff;
+    }
 
-Une présence digitale simple.
-Des logiciels métier accessibles.
-Des paiements directs.
-Une visibilité locale.
-Une logique 0% commission.
-Des professionnels qui gardent leur nom, leur relation et leur argent.
+    .selectRow{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      align-items:center;
+      margin-top:12px;
+    }
 
-Uber veut garder le client dans Uber.
-DIGIY veut l’amener chez le professionnel.
+    select{
+      width:100%;
+      border-radius:16px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+      font-weight:800;
+      outline:none;
+    }
 
-C’est plus qu’une différence de modèle.
-C’est une différence de philosophie.
+    option{
+      color:#111;
+    }
+
+    .notice{
+      margin-top:14px;
+      padding:13px 14px;
+      border-radius:18px;
+      background:rgba(246,196,83,.08);
+      border:1px solid rgba(246,196,83,.22);
+      color:#fff3cf;
+      font-size:13px;
+      line-height:1.55;
+      font-weight:750;
+    }
+
+    .codeBox{
+      margin-top:14px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.22);
+    }
+
+    .codeBox summary{
+      cursor:pointer;
+      padding:13px 14px;
+      font-weight:950;
+      color:#fff;
+      list-style:none;
+    }
+
+    .codeBox pre{
+      margin:0;
+      padding:14px;
+      color:#dbe8e0;
+      overflow:auto;
+      font-size:12px;
+      line-height:1.55;
+      border-top:1px solid rgba(255,255,255,.08);
+      white-space:pre-wrap;
+    }
+
+    @media(max-width:900px){
+      body{padding:12px}
+      .page{grid-template-columns:1fr}
+      .phone{max-width:420px}
+      .panel{border-radius:24px}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="phone" aria-label="Prévisualisation TikTok DIGIYLYFE">
+      <div class="stage" id="stage">
+        <div class="slide zoom-in active" data-index="0">
+          <img src="https://digiylyfe.net/wp-content/uploads/2026/04/ChatGPT-Image-30-avr.-2026-15_19_48.png" alt="DIGIYLYFE — Uber veut garder le client dans son application, DIGIY veut l’amener chez le professionnel"/>
+          <div class="shade"></div>
+          <div class="caption">
+            <div class="line medium white" data-delay="800">Les grandes plateformes veulent</div>
+            <div class="line medium white" data-delay="1600">garder le client dans leur application.</div>
+            <div class="line big gold" data-delay="3200">DIGIYLYFE veut que le client</div>
+            <div class="line big gold" data-delay="4000">arrive chez le professionnel.</div>
+            <div class="line small white" data-delay="5500">0% commission • Paiement direct</div>
+          </div>
+        </div>
+
+        <div class="slide pan" data-index="1">
+          <img src="https://digiylyfe.net/wp-content/uploads/2026/04/ChatGPT-Image-30-avr.-2026-15_19_48.png" alt="DIGIYLYFE — Super écosystème local"/>
+          <div class="shade"></div>
+          <div class="caption">
+            <div class="line big white" data-delay="300">Une super app humaine,</div>
+            <div class="line big gold" data-delay="900">simple et directe.</div>
+            <div class="line medium white" data-delay="2000">Pour tous. Par nous. Pour l’Afrique.</div>
+            <div class="line small white" data-delay="3500">Mon commerce. Je conduis. Je loue.</div>
+            <div class="line small white" data-delay="4600">Je vends. Je travaille. Je découvre.</div>
+          </div>
+        </div>
+
+        <div class="slide zoom-out" data-index="2">
+          <img src="https://digiylyfe.net/wp-content/uploads/2026/04/ChatGPT-Image-30-avr.-2026-15_19_48.png" alt="DIGIYLYFE — Le bonheur business est là ici"/>
+          <div class="shade"></div>
+          <div class="caption">
+            <div class="line xbig white" data-delay="500">Le bonheur business</div>
+            <div class="line xbig gold" data-delay="1200">est LÀ ICI.</div>
+            <div class="line small white" data-delay="2500">L’Afrique enracinée, connectée au monde.</div>
+            <div class="line small white" data-delay="3500">Zéro commission. 100% indépendance.</div>
+            <div class="line medium gold" data-delay="4800">digiylyfe.com • Lien dans la bio.</div>
+          </div>
+        </div>
+
+        <div class="brandTop">
+          <div class="brandMark">
+            <img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="Logo DIGIYLYFE"/>
+          </div>
+          <div class="brandText">
+            <div class="brandName">DIGIYLYFE</div>
+            <div class="brandSub">Ancré en Afrique, ouvert au monde</div>
+          </div>
+        </div>
+
+        <div class="progress" id="progress"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <span class="kicker">Version HTML GitHub Pages</span>
+      <h1>Diaporama DIGIYLYFE avec voix navigateur</h1>
+      <p class="lead">
+        Cette version fonctionne sans Python et sans ffmpeg. Tu peux la mettre directement sur GitHub Pages.
+        La voix dépend du téléphone ou du navigateur : elle sera souvent meilleure sur Mac, iPhone ou Android récent.
+      </p>
+
+      <div class="controls">
+        <button class="green" type="button" id="playBtn">▶️ Lire la vidéo</button>
+        <button class="secondary" type="button" id="stopBtn">⏹️ Stop</button>
+        <button class="secondary" type="button" id="voiceTestBtn">🎙️ Tester la voix</button>
+      </div>
+
+      <div class="selectRow">
+        <select id="voiceSelect" aria-label="Choisir une voix française">
+          <option value="">Chargement des voix…</option>
+        </select>
+        <button type="button" id="reloadVoicesBtn">↻</button>
+      </div>
+
+      <div class="notice">
+        Conseil terrain : sur iPhone ou Mac, teste plusieurs voix françaises. Sur certains navigateurs,
+        il faut cliquer une première fois sur “Lire la vidéo” pour débloquer la voix.
+      </div>
+
+      <details class="codeBox">
+        <summary>Texte lu par la voix</summary>
+        <pre id="voiceTextPreview"></pre>
+      </details>
+
+      <details class="codeBox">
+        <summary>Comment l’utiliser sur GitHub</summary>
+        <pre>1. Renomme ce fichier en index.html.
+2. Mets-le dans un dépôt GitHub.
+3. Active GitHub Pages.
+4. Ouvre l’URL GitHub Pages sur téléphone.
+5. Clique “Lire la vidéo”.
+
+Option :
+Pour changer les images, modifie les URL des balises &lt;img src="..."&gt; dans les trois slides.</pre>
+      </details>
+    </section>
+  </main>
+
+  <script>
+    const SLIDE_DURATION = 8000;
+    const TOTAL_DURATION = 22000;
+
+    const voiceScript = [
+      {
+        at: 800,
+        text: "Les grandes plateformes gardent le client dans leur application. DIGIYLYFE, lui, veut que le client arrive directement chez le professionnel. Zéro commission. Paiement direct."
+      },
+      {
+        at: 8400,
+        text: "DIGIYLYFE. Une super application humaine, simple et directe. Pour tous. Par nous. Pour l’Afrique."
+      },
+      {
+        at: 15300,
+        text: "Le bonheur business est là ici. L’Afrique enracinée, connectée au monde. Zéro commission. Cent pour cent indépendance. Retrouvez le lien dans la bio."
+      }
+    ];
+
+    const slides = [...document.querySelectorAll(".slide")];
+    const progress = document.getElementById("progress");
+    const voiceSelect = document.getElementById("voiceSelect");
+    const playBtn = document.getElementById("playBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const voiceTestBtn = document.getElementById("voiceTestBtn");
+    const reloadVoicesBtn = document.getElementById("reloadVoicesBtn");
+    const voiceTextPreview = document.getElementById("voiceTextPreview");
+
+    let timers = [];
+    let voices = [];
+    let selectedVoice = null;
+
+    voiceTextPreview.textContent = voiceScript.map(item => item.text).join("\n\n");
+
+    function clearTimers(){
+      timers.forEach(t => clearTimeout(t));
+      timers = [];
+    }
+
+    function resetVisuals(){
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === 0);
+        slide.querySelectorAll(".line").forEach(line => line.classList.remove("show"));
+      });
+
+      progress.classList.remove("run");
+      progress.style.width = "0%";
+      void progress.offsetWidth;
+    }
+
+    function showSlide(index){
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        if(i === index){
+          slide.querySelectorAll(".line").forEach(line => {
+            line.classList.remove("show");
+            const delay = Number(line.dataset.delay || 0);
+            timers.push(setTimeout(() => line.classList.add("show"), delay));
+          });
+        }
+      });
+    }
+
+    function pickBestVoice(list){
+      if(!list.length) return null;
+
+      const preferredNames = [
+        "Thomas", "Audrey", "Amélie", "Aurelie", "Marie", "Daniel", "Samantha"
+      ];
+
+      for(const name of preferredNames){
+        const found = list.find(v => v.name.toLowerCase().includes(name.toLowerCase()) && v.lang.toLowerCase().startsWith("fr"));
+        if(found) return found;
+      }
+
+      return (
+        list.find(v => v.lang && v.lang.toLowerCase() === "fr-fr") ||
+        list.find(v => v.lang && v.lang.toLowerCase().startsWith("fr")) ||
+        list[0]
+      );
+    }
+
+    function loadVoices(){
+      if(!("speechSynthesis" in window)){
+        voiceSelect.innerHTML = '<option>Voix non disponible sur ce navigateur</option>';
+        return;
+      }
+
+      voices = speechSynthesis.getVoices() || [];
+      const frenchVoices = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith("fr"));
+      const usableVoices = frenchVoices.length ? frenchVoices : voices;
+
+      selectedVoice = pickBestVoice(usableVoices);
+
+      voiceSelect.innerHTML = "";
+
+      if(!usableVoices.length){
+        const opt = document.createElement("option");
+        opt.textContent = "Aucune voix chargée — réessaie";
+        opt.value = "";
+        voiceSelect.appendChild(opt);
+        return;
+      }
+
+      usableVoices.forEach((voice, index) => {
+        const opt = document.createElement("option");
+        opt.value = voice.name;
+        opt.textContent = `${voice.name} — ${voice.lang}`;
+        if(selectedVoice && voice.name === selectedVoice.name) opt.selected = true;
+        voiceSelect.appendChild(opt);
+      });
+    }
+
+    function speak(text){
+      if(!("speechSynthesis" in window)) return;
+
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "fr-FR";
+      utter.rate = 0.88;
+      utter.pitch = 1;
+      utter.volume = 1;
+
+      const chosenName = voiceSelect.value;
+      const chosenVoice =
+        voices.find(v => v.name === chosenName) ||
+        selectedVoice ||
+        pickBestVoice(voices);
+
+      if(chosenVoice) utter.voice = chosenVoice;
+
+      speechSynthesis.speak(utter);
+    }
+
+    function stopAll(){
+      clearTimers();
+      if("speechSynthesis" in window){
+        speechSynthesis.cancel();
+      }
+      resetVisuals();
+    }
+
+    function play(){
+      stopAll();
+
+      progress.classList.add("run");
+
+      showSlide(0);
+      timers.push(setTimeout(() => showSlide(1), 7000));
+      timers.push(setTimeout(() => showSlide(2), 14000));
+
+      voiceScript.forEach(item => {
+        timers.push(setTimeout(() => speak(item.text), item.at));
+      });
+
+      timers.push(setTimeout(() => {
+        playBtn.textContent = "🔁 Rejouer la vidéo";
+      }, TOTAL_DURATION));
+    }
+
+    playBtn.addEventListener("click", play);
+    stopBtn.addEventListener("click", stopAll);
+
+    voiceTestBtn.addEventListener("click", () => {
+      if("speechSynthesis" in window){
+        speechSynthesis.cancel();
+      }
+      speak("DIGIYLYFE veut que le client arrive chez le professionnel. Zéro commission. Paiement direct.");
+    });
+
+    reloadVoicesBtn.addEventListener("click", loadVoices);
+
+    voiceSelect.addEventListener("change", () => {
+      selectedVoice = voices.find(v => v.name === voiceSelect.value) || selectedVoice;
+    });
+
+    if("speechSynthesis" in window){
+      speechSynthesis.onvoiceschanged = loadVoices;
+      loadVoices();
+      setTimeout(loadVoices, 500);
+      setTimeout(loadVoices, 1500);
+    }
+
+    resetVisuals();
+  </script>
+</body>
+</html>
+
 
