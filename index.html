@@ -643,6 +643,260 @@
       }
     }
 
+  
+    /* PATCH PLUS MENU COMPLET DIGIY */
+    #plus-sheet{
+      max-height:min(78vh,720px);
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      overscroll-behavior:contain;
+    }
+
+    .plus-brand{
+      padding:2px 2px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      margin-bottom:12px;
+    }
+
+    .plus-brand-main{
+      font-family:var(--fontA);
+      font-size:18px;
+      line-height:1.12;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .plus-brand-by{
+      margin-top:5px;
+      font-family:var(--fontA);
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.06em;
+      color:#f6c453;
+    }
+
+    .plus-signal-row{
+      margin-top:10px;
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+    }
+
+    .plus-signal{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:28px;
+      padding:0 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.06);
+      color:rgba(248,250,252,.86);
+      font-family:var(--fontA);
+      font-size:10.5px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .plus-signal.gold{
+      border-color:rgba(246,196,83,.34);
+      background:rgba(246,196,83,.10);
+      color:#fff3cf;
+    }
+
+    .plus-signal.green{
+      border-color:rgba(0,166,81,.34);
+      background:rgba(0,166,81,.12);
+      color:#dcffe8;
+    }
+
+    .plus-menu-section{
+      margin-top:12px;
+    }
+
+    .plus-menu-title{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:26px;
+      padding:0 9px;
+      border-radius:8px;
+      font-family:var(--fontA);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    .plus-menu-title.gold{
+      color:#fff3cf;
+      border:1px solid rgba(246,196,83,.34);
+      background:rgba(246,196,83,.10);
+    }
+
+    .plus-menu-title.green{
+      color:#dcffe8;
+      border:1px solid rgba(0,166,81,.34);
+      background:rgba(0,166,81,.12);
+    }
+
+    .plus-menu-title.soft{
+      color:rgba(248,250,252,.86);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+    }
+
+    .plus-menu-grid{
+      margin-top:9px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    .plus-menu-link,
+    .plus-menu-action{
+      min-height:48px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.055);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      gap:9px;
+      padding:10px 11px;
+      text-align:left;
+      font-family:var(--fontA);
+      font-size:12.5px;
+      font-weight:900;
+      line-height:1.12;
+      cursor:pointer;
+      text-decoration:none;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .plus-menu-link:active,
+    .plus-menu-action:active{
+      transform:scale(.98);
+      border-color:rgba(246,196,83,.32);
+      background:rgba(246,196,83,.12);
+    }
+
+    .plus-menu-link.home{
+      grid-column:1 / -1;
+      background:linear-gradient(135deg,rgba(246,196,83,.14),rgba(0,166,81,.12));
+      border-color:rgba(246,196,83,.22);
+    }
+
+    .plus-menu-link .emoji,
+    .plus-menu-action .emoji{
+      width:26px;
+      flex:0 0 26px;
+      text-align:center;
+      font-size:18px;
+      line-height:1;
+    }
+
+    .plus-menu-link.gold{
+      border-color:rgba(246,196,83,.18);
+      background:rgba(246,196,83,.07);
+    }
+
+    .plus-menu-link.green{
+      border-color:rgba(0,166,81,.18);
+      background:rgba(0,166,81,.075);
+    }
+
+    .plus-menu-action{
+      border-color:rgba(255,255,255,.14);
+    }
+
+    @media(max-width:420px){
+      .plus-menu-grid{
+        grid-template-columns:1fr;
+      }
+      #plus-sheet{
+        max-height:80vh;
+      }
+    }
+
+  
+    /* PATCH DESKTOP MENU DIGIY */
+    #desktopPlusBtn{
+      display:none;
+    }
+
+    @media(min-width:641px){
+      #desktopPlusBtn{
+        position:fixed;
+        right:16px;
+        bottom:18px;
+        z-index:1300;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:9px;
+        min-height:54px;
+        padding:0 18px;
+        border-radius:999px;
+        border:1px solid rgba(246,196,83,.36);
+        background:
+          radial-gradient(260px 90px at 18% 0%,rgba(255,255,255,.18),transparent 62%),
+          linear-gradient(135deg,rgba(246,196,83,.18),rgba(0,0,0,.62));
+        color:#fff3cf;
+        font-family:var(--fontA);
+        font-size:14px;
+        font-weight:900;
+        cursor:pointer;
+        box-shadow:0 14px 36px rgba(0,0,0,.36);
+        backdrop-filter:blur(12px);
+        -webkit-tap-highlight-color:transparent;
+      }
+
+      #desktopPlusBtn:hover{
+        transform:translateY(-2px);
+        border-color:rgba(246,196,83,.58);
+        background:
+          radial-gradient(260px 90px at 18% 0%,rgba(255,255,255,.22),transparent 62%),
+          linear-gradient(135deg,rgba(246,196,83,.24),rgba(0,0,0,.64));
+      }
+
+      #desktopPlusBtn:active{
+        transform:scale(.97);
+      }
+
+      #desktopPlusBtn.active{
+        color:#06140f;
+        background:linear-gradient(135deg,#f6c453,#22c55e);
+        border-color:rgba(246,196,83,.72);
+      }
+
+      #plus-overlay.open{
+        display:block;
+      }
+
+      #plus-sheet{
+        left:auto;
+        right:16px;
+        bottom:86px;
+        width:min(520px,calc(100vw - 32px));
+        max-height:min(82vh,760px);
+      }
+
+      #plus-sheet.open{
+        display:block;
+      }
+
+      .plus-menu-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .plus-menu-link,
+      .plus-menu-action{
+        min-height:50px;
+      }
+    }
+    /* /PATCH DESKTOP MENU DIGIY */
+
   </style>
 </head>
 <body>
@@ -1320,43 +1574,99 @@
 })();
 </script>
 
-  <!-- PANNEAU PLUS MOBILE — propre et lisible -->
+  <!-- PANNEAU PLUS MOBILE — MENU COMPLET DIGIY -->
   <div id="plus-overlay" aria-hidden="true"></div>
 
-  <aside id="plus-sheet" aria-hidden="true" aria-label="Plus DIGIY">
+  <aside id="plus-sheet" aria-hidden="true" aria-label="Menu complet DIGIY">
     <div class="plus-sheet-head">
       <div>
-        <div class="plus-sheet-title">Plus DIGIY</div>
-        <div class="plus-sheet-sub">Audio, partage, aide et installation.</div>
+        <div class="plus-sheet-title">Menu DIGIY</div>
+        <div class="plus-sheet-sub">Toutes les portes au même endroit.</div>
       </div>
       <button class="plus-close" id="closePlusSheet" type="button" aria-label="Fermer">×</button>
     </div>
 
-    <div class="plus-grid">
-      <button class="plus-btn main" id="plusAudioClean" type="button">
-        <span class="ico">🎧</span>
-        <span><b>Écouter DIGIY</b><span>La vision en audio</span></span>
-      </button>
+    <div class="plus-brand">
+      <div class="plus-brand-main">Trouver, contacter, avancer sans détour</div>
+      <div class="plus-brand-by">BY DIGIYLYFE</div>
+      <div class="plus-signal-row">
+        <span class="plus-signal gold">0% commission</span>
+        <span class="plus-signal green">Paiement direct</span>
+        <span class="plus-signal">Territoire vivant</span>
+        <span class="plus-signal">LOGICIELS métier</span>
+      </div>
+    </div>
 
-      <button class="plus-btn" id="plusShareClean" type="button">
-        <span class="ico">📤</span>
-        <span><b>Partager</b><span>Faire circuler le site</span></span>
-      </button>
+    <div class="plus-menu-grid">
+      <a class="plus-menu-link home" href="https://digiylyfe.com/">
+        <span class="emoji">🏠</span><span>Accueil DIGIYLYFE</span>
+      </a>
+      <a class="plus-menu-link home" href="https://vision.digiylyfe.com/" target="_blank" rel="noopener noreferrer">
+        <span class="emoji">📜</span><span>Vision</span>
+      </a>
+    </div>
 
-      <button class="plus-btn" id="plusHelpClean" type="button">
-        <span class="ico">∞</span>
-        <span><b>NDIMBAL</b><span>Aide simple</span></span>
-      </button>
+    <div class="plus-menu-section">
+      <div class="plus-menu-title gold">JE CHERCHE</div>
+      <div class="plus-menu-grid">
+        <a class="plus-menu-link gold" href="https://explore.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🗺️</span><span>Découvrir le territoire</span></a>
+        <a class="plus-menu-link gold" href="https://driver-client.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🚗</span><span>Un chauffeur</span></a>
+        <a class="plus-menu-link gold" href="https://beauville.github.io/galerie-chauffeurs/" target="_blank" rel="noopener noreferrer"><span class="emoji">👑</span><span>Nos chauffeurs</span></a>
+        <a class="plus-menu-link gold" href="https://loc.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🏠</span><span>Où dormir</span></a>
+        <a class="plus-menu-link gold" href="https://resa-table-resto.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">📅</span><span>Réserver</span></a>
+        <a class="plus-menu-link gold" href="https://build.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🏗️</span><span>Un artisan</span></a>
+        <a class="plus-menu-link gold" href="https://mon-commerce.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">👜</span><span>Mon commerce</span></a>
+        <a class="plus-menu-link gold" href="https://market.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🛍️</span><span>Les boutiques</span></a>
+        <a class="plus-menu-link gold" href="https://jobs.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">💼</span><span>Du travail</span></a>
+        <a class="plus-menu-link gold" href="#tarifs"><span class="emoji">🏷️</span><span>Tarifs</span></a>
+      </div>
+    </div>
 
-      <button class="plus-btn" id="plusInstallClean" type="button">
-        <span class="ico">📲</span>
-        <span><b>Installer</b><span>Ajouter au téléphone</span></span>
-      </button>
+    <div class="plus-menu-section">
+      <div class="plus-menu-title green">JE TRAVAILLE</div>
+      <div class="plus-menu-grid">
+        <a class="plus-menu-link green" href="https://pro-espace.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🏢</span><span>Mon activité</span></a>
+        <a class="plus-menu-link green" href="https://commencer-a-payer.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">✍️</span><span>Rejoindre DIGIY</span></a>
+        <a class="plus-menu-link green" href="https://pro-market.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🛍️</span><span>Je vends / MARKET</span></a>
+        <a class="plus-menu-link green" href="https://commerce-pro.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">💰</span><span>Mon commerce / CAISSE</span></a>
+        <a class="plus-menu-link green" href="https://pro-loc.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🏠</span><span>Je loue / LOC</span></a>
+        <a class="plus-menu-link green" href="https://pro-resa-resto.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">📅</span><span>Je réserve / RÉSA</span></a>
+        <a class="plus-menu-link green" href="https://pro-driver.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🚗</span><span>Je conduis / DRIVER</span></a>
+        <a class="plus-menu-link green" href="https://pro-job.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">💼</span><span>Je recrute / JOBS</span></a>
+        <a class="plus-menu-link green" href="https://pro-explore.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🗺️</span><span>Me faire connaître / EXPLORE</span></a>
+        <a class="plus-menu-link green" href="https://pro-build.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🏗️</span><span>Mes services / MULTI</span></a>
+        <a class="plus-menu-link green" href="https://pay.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">💳</span><span>Mon argent / PAY</span></a>
+      </div>
+    </div>
+
+    <div class="plus-menu-section">
+      <div class="plus-menu-title soft">AUSSI</div>
+      <div class="plus-menu-grid">
+        <a class="plus-menu-link" href="#annonces"><span class="emoji">📢</span><span>Annonces</span></a>
+        <a class="plus-menu-link" href="https://pay.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">💳</span><span>Mon argent</span></a>
+        <a class="plus-menu-link" href="https://maps.google.com/?q=DIGIYLYFE%20Saly%20S%C3%A9n%C3%A9gal" target="_blank" rel="noopener noreferrer"><span class="emoji">📍</span><span>Venir chez DIGIY</span></a>
+        <a class="plus-menu-link" href="https://loc.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🏡</span><span>Locations</span></a>
+        <a class="plus-menu-link" href="https://explore.digiylyfe.com/" target="_blank" rel="noopener noreferrer"><span class="emoji">🗺️</span><span>La carte</span></a>
+        <button class="plus-menu-action" id="plusAudioClean" type="button"><span class="emoji">🎵</span><span>Écouter</span></button>
+        <button class="plus-menu-action" id="plusShareClean" type="button"><span class="emoji">📤</span><span>Partager</span></button>
+        <button class="plus-menu-action" id="plusSuggestClean" type="button"><span class="emoji">🤝</span><span>Suggérer un pro</span></button>
+        <button class="plus-menu-action" id="plusQuestionClean" type="button"><span class="emoji">🧠</span><span>Poser une question</span></button>
+      </div>
     </div>
   </aside>
 
 
+
   <!-- BOTTOM NAV MOBILE — clair, sans fantaisie -->
+  
+  <!-- BOTTOM NAV MOBILE — clair, sans fantaisie -->
+  
+  <!-- DESKTOP MENU DIGIY BUTTON -->
+  <button id="desktopPlusBtn" type="button" aria-expanded="false" aria-controls="plus-sheet">
+    ☰ Menu DIGIY
+  </button>
+  <!-- /DESKTOP MENU DIGIY BUTTON -->
+
   <nav id="bottom-nav" aria-label="Navigation rapide DIGIYLYFE">
     <div id="bottom-nav-inner">
       <a class="bnav-tab bnav-primary" href="#trouver">
@@ -1377,8 +1687,6 @@
       </button>
     </div>
   </nav>
-
-
   <!-- PANNEAU PLUS MOBILE JS -->
 
   <script>
@@ -1405,6 +1713,7 @@
       if(sheet && sheet.classList.contains("open")) close();
       else open();
     });
+
     if(closeBtn) closeBtn.addEventListener("click", close);
     if(overlay) overlay.addEventListener("click", close);
     document.addEventListener("keydown", function(e){
@@ -1420,6 +1729,11 @@
       return false;
     }
 
+    function openUrl(url){
+      try{ window.open(url, "_blank", "noopener,noreferrer"); }
+      catch(_){ location.href = url; }
+    }
+
     function shareSite(){
       if(window.digiyShareSite){
         window.digiyShareSite();
@@ -1427,14 +1741,32 @@
       }
       var payload = {
         title:"DIGIYLYFE",
-        text:"DIGIYLYFE : trouve un chauffeur, un logement, une boutique, un service. Contact direct, 0% commission.",
+        text:"DIGIYLYFE : trouver, explorer et publier son activité. Contact direct, paiement direct, 0% commission.",
         url:"https://digiylyfe.com/"
       };
       if(navigator.share){
         navigator.share(payload).catch(function(){});
       }else{
-        window.open("https://wa.me/?text=" + encodeURIComponent(payload.text + " " + payload.url), "_blank", "noopener,noreferrer");
+        openUrl("https://wa.me/?text=" + encodeURIComponent(payload.text + " " + payload.url));
       }
+    }
+
+    function suggestPro(){
+      if(window.digiySuggestPro){
+        window.digiySuggestPro();
+        return;
+      }
+      var msg = "Bonjour DIGIY, je veux suggérer un pro ou un lieu utile. Nom : ... Ville/quartier : ... WhatsApp : ... Activité : ...";
+      openUrl("https://wa.me/221771342889?text=" + encodeURIComponent(msg));
+    }
+
+    function askQuestion(){
+      if(window.digiyOpenNdimbal){
+        window.digiyOpenNdimbal();
+        return;
+      }
+      var msg = "Bonjour DIGIY, j’ai une question : ...";
+      openUrl("https://wa.me/221771342889?text=" + encodeURIComponent(msg));
     }
 
     function playAudio(){
@@ -1447,31 +1779,80 @@
       }
     }
 
-    function openHelp(){
-      if(window.digiyOpenNdimbal){
-        window.digiyOpenNdimbal();
-        return;
-      }
-      if(!clickIfExists("digiy-help-btn")){
-        alert("Aide DIGIY : choisis une voie — Trouver, Explorer ou Pro.");
-      }
-    }
-
-    function installApp(){
-      if(!clickIfExists("install-app-btn")){
-        alert("Pour installer : menu du navigateur → Ajouter à l’écran d’accueil.");
-      }
-    }
-
     var audio = document.getElementById("plusAudioClean");
     var share = document.getElementById("plusShareClean");
-    var help = document.getElementById("plusHelpClean");
-    var install = document.getElementById("plusInstallClean");
+    var suggest = document.getElementById("plusSuggestClean");
+    var question = document.getElementById("plusQuestionClean");
 
     if(audio) audio.addEventListener("click", function(){ close(); playAudio(); });
     if(share) share.addEventListener("click", function(){ close(); shareSite(); });
-    if(help) help.addEventListener("click", function(){ close(); openHelp(); });
-    if(install) install.addEventListener("click", function(){ close(); installApp(); });
+    if(suggest) suggest.addEventListener("click", function(){ close(); suggestPro(); });
+    if(question) question.addEventListener("click", function(){ close(); askQuestion(); });
+  })();
+  </script>
+
+
+
+  <!-- DESKTOP MENU DIGIY JS -->
+  <script>
+  (function(){
+    var desktopBtn = document.getElementById("desktopPlusBtn");
+    var mobileBtn = document.getElementById("openPlusSheet");
+    var sheet = document.getElementById("plus-sheet");
+    var overlay = document.getElementById("plus-overlay");
+    var closeBtn = document.getElementById("closePlusSheet");
+
+    function setOpen(open){
+      if(!sheet || !overlay) return;
+      sheet.classList.toggle("open", !!open);
+      overlay.classList.toggle("open", !!open);
+      sheet.setAttribute("aria-hidden", open ? "false" : "true");
+      overlay.setAttribute("aria-hidden", open ? "false" : "true");
+
+      if(desktopBtn){
+        desktopBtn.classList.toggle("active", !!open);
+        desktopBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      if(mobileBtn){
+        mobileBtn.classList.toggle("active", !!open);
+        mobileBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+    }
+
+    function toggle(){
+      setOpen(!(sheet && sheet.classList.contains("open")));
+    }
+
+    function close(){
+      setOpen(false);
+    }
+
+    if(desktopBtn){
+      desktopBtn.addEventListener("click", function(e){
+        e.preventDefault();
+        toggle();
+      });
+    }
+
+    if(overlay){
+      overlay.addEventListener("click", close);
+    }
+
+    if(closeBtn){
+      closeBtn.addEventListener("click", close);
+    }
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") close();
+    });
+
+    /* Fermer le menu après clic sur un lien réel */
+    if(sheet){
+      sheet.addEventListener("click", function(e){
+        var link = e.target.closest && e.target.closest("a");
+        if(link) setTimeout(close, 120);
+      });
+    }
   })();
   </script>
 
