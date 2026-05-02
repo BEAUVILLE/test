@@ -3,237 +3,247 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>DIGIYLYFE — De Saly à Sarlat</title>
-  <meta name="description" content="DIGIYLYFE aide les pros du terrain à rester visibles, organisés et payés directement. Sénégal, Afrique, France. 0% commission." />
+  <title>DIGIYLYFE — Présence digitale simple pour les pros du terrain</title>
+  <meta name="description" content="DIGIYLYFE aide les activités locales à être visibles, organisées et payées directement. 0% commission. De Saly à Sarlat, le terrain garde la main." />
   <meta name="theme-color" content="#00853f" />
-  <meta property="og:title" content="DIGIYLYFE — De Saly à Sarlat" />
-  <meta property="og:description" content="Une présence digitale simple pour les activités locales. 0% commission. Paiement direct au professionnel." />
+  <meta property="og:title" content="DIGIYLYFE — Le bonheur business est là ici" />
+  <meta property="og:description" content="Présence digitale simple, outils métier utiles, paiement direct au professionnel, 0% commission." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digiylyfe.com/" />
   <meta property="og:image" content="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
   <style>
     :root{
       --green:#00853f;
       --green2:#00a651;
       --dark:#04130d;
-      --dark2:#082319;
+      --dark2:#082419;
       --gold:#f6c453;
-      --text:#f8fafc;
-      --muted:rgba(248,250,252,.74);
+      --white:#f8fafc;
+      --muted:rgba(248,250,252,.76);
       --line:rgba(255,255,255,.14);
-      --card:rgba(255,255,255,.07);
-      --shadow:0 22px 70px rgba(0,0,0,.34);
-      --fontA:"Outfit",system-ui,-apple-system,sans-serif;
-      --fontB:"Manrope",system-ui,-apple-system,sans-serif;
+      --shadow:0 22px 70px rgba(0,0,0,.35);
+      --fontA:"Outfit",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --fontB:"Manrope",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:var(--fontB);
-      color:var(--text);
-      background:
-        radial-gradient(900px 520px at 10% 0%,rgba(0,166,81,.34),transparent 58%),
-        radial-gradient(860px 480px at 92% 10%,rgba(246,196,83,.18),transparent 58%),
-        linear-gradient(180deg,#067a3a 0%,#073f28 28%,#04130d 100%);
       min-height:100vh;
+      font-family:var(--fontB);
+      color:var(--white);
+      background:
+        radial-gradient(900px 540px at 10% 0%,rgba(0,166,81,.34),transparent 60%),
+        radial-gradient(800px 520px at 92% 8%,rgba(246,196,83,.18),transparent 62%),
+        linear-gradient(180deg,#067a3a 0%,#083123 36%,#04130d 100%);
       overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
-    .page{max-width:1180px;margin:0 auto;padding:16px 14px 70px}
+    .page{width:min(1160px,100%);margin:0 auto;padding:14px 14px 110px}
     .shell{
-      overflow:hidden;
       border:1px solid var(--line);
-      border-radius:30px;
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(3,18,13,.82));
+      border-radius:28px;
+      background:linear-gradient(180deg,rgba(8,50,32,.70),rgba(4,19,13,.92));
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    .top{
+    .topbar{
       display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
-      padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.14);backdrop-filter:blur(14px);
+      padding:16px 18px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+      position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
     }
     .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .logo{width:52px;height:52px;border-radius:16px;overflow:hidden;border:1px solid rgba(246,196,83,.36);background:#06140f;box-shadow:0 0 0 4px rgba(246,196,83,.08)}
-    .logo img{width:100%;height:100%;object-fit:cover;display:block}
-    .brand h1{margin:0;font-family:var(--fontA);font-size:20px;line-height:1;font-weight:900;letter-spacing:.8px}
-    .brand p{margin:5px 0 0;color:var(--muted);font-size:13px;font-weight:800;line-height:1.25}
-    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-    .nav a{padding:10px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);font-family:var(--fontA);font-size:12px;font-weight:900;color:#fff}
-    .nav a.gold{border-color:rgba(246,196,83,.44);background:rgba(246,196,83,.12);color:#fff2c7}
-    .hero{padding:54px 22px 34px;text-align:center;position:relative;overflow:hidden}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid rgba(246,196,83,.38);border-radius:999px;background:rgba(246,196,83,.10);color:#fff2c7;font-family:var(--fontA);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    .dot{width:8px;height:8px;border-radius:999px;background:#22c55e;box-shadow:0 0 0 7px rgba(34,197,94,.13)}
-    .hero h2{max-width:880px;margin:22px auto 0;font-family:var(--fontA);font-size:clamp(42px,8vw,92px);line-height:.90;letter-spacing:-.06em;font-weight:900}
+    .logo{
+      width:52px;height:52px;border-radius:16px;overflow:hidden;flex:0 0 auto;
+      border:1px solid rgba(246,196,83,.34);background:rgba(0,0,0,.18);
+      box-shadow:0 0 0 4px rgba(246,196,83,.08);
+    }
+    .logo img{width:100%;height:100%;display:block;object-fit:cover}
+    .brand h1{font-family:var(--fontA);font-size:19px;line-height:1;margin:0;letter-spacing:.6px}
+    .brand p{margin:5px 0 0;color:var(--muted);font-size:13px;font-weight:800}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .chip{padding:8px 11px;border-radius:999px;border:1px solid var(--line);font-family:var(--fontA);font-size:11px;font-weight:900;background:rgba(255,255,255,.08)}
+    .chip.gold{color:#fff1c4;border-color:rgba(246,196,83,.38);background:rgba(246,196,83,.11)}
+    .hero{padding:46px 20px 34px;text-align:center}
+    .kicker{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(246,196,83,.34);background:rgba(246,196,83,.10);color:#fff3cf;font-family:var(--fontA);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 6px rgba(34,197,94,.14)}
+    .hero h2{margin:22px auto 0;max-width:760px;font-family:var(--fontA);font-size:clamp(46px,8vw,92px);line-height:.9;letter-spacing:-.06em;font-weight:900}
     .hero h2 span{display:block;color:var(--gold)}
-    .lead{max-width:820px;margin:22px auto 0;color:#dbe8e0;font-size:clamp(17px,2.1vw,23px);line-height:1.65;font-weight:800}
-    .lead strong{color:#fff}
-    .cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 20px;border-radius:16px;border:1px solid rgba(255,255,255,.14);font-family:var(--fontA);font-weight:900;box-shadow:0 14px 34px rgba(0,0,0,.20)}
-    .btn.primary{background:linear-gradient(135deg,var(--green2),var(--green));color:#fff}
-    .btn.gold{background:linear-gradient(135deg,var(--gold),#22c55e);color:#06140f;border-color:rgba(246,196,83,.60)}
-    .btn.ghost{background:rgba(255,255,255,.07);color:#fff}
-    .mini{margin:18px auto 0;max-width:780px;color:rgba(248,250,252,.72);font-size:14px;line-height:1.6;font-weight:700}
-    .bridge{padding:20px;border-top:1px solid rgba(255,255,255,.08)}
-    .sectionTitle{text-align:center;margin:0 auto 20px;max-width:760px}
-    .sectionTitle .k{display:inline-flex;margin-bottom:11px;padding:7px 10px;border-radius:999px;background:rgba(246,196,83,.10);border:1px solid rgba(246,196,83,.28);color:#fff2c7;font-family:var(--fontA);font-size:11px;font-weight:900;letter-spacing:.10em;text-transform:uppercase}
-    .sectionTitle h3{margin:0;font-family:var(--fontA);font-size:clamp(26px,4vw,48px);line-height:1.02;letter-spacing:-.04em}
-    .sectionTitle h3 span{color:var(--gold)}
-    .sectionTitle p{margin:12px 0 0;color:var(--muted);font-size:15.5px;line-height:1.65;font-weight:800}
-    .territories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
-    .territory{border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:0 16px 42px rgba(0,0,0,.20)}
-    .territory.afrique{border-color:rgba(0,166,81,.42);background:radial-gradient(520px 260px at 20% 0%,rgba(0,166,81,.20),transparent 60%),rgba(255,255,255,.06)}
-    .territory.france{border-color:rgba(246,196,83,.40);background:radial-gradient(520px 260px at 20% 0%,rgba(246,196,83,.18),transparent 60%),rgba(255,255,255,.06)}
-    .territory .flag{font-size:34px;margin-bottom:10px}
-    .territory h4{margin:0;font-family:var(--fontA);font-size:28px;line-height:1.05;font-weight:900;letter-spacing:-.03em}
-    .territory p{margin:12px 0 0;color:#dbe8e0;font-size:15px;line-height:1.65;font-weight:800}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-    .chip{padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.12);color:#fff;font-family:var(--fontA);font-size:11px;font-weight:900}
-    .territory .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .territory .actions .btn{min-height:46px;padding:0 14px;font-size:13px;box-shadow:none}
-    .tools{padding:24px 20px;border-top:1px solid rgba(255,255,255,.08)}
-    .toolGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
-    .tool{padding:16px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055)}
-    .tool b{display:block;font-family:var(--fontA);font-size:16px;margin-top:7px}
-    .tool span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5;font-weight:700}
-    .quote{margin:20px 20px 0;padding:22px;border-radius:24px;border:1px solid rgba(246,196,83,.30);background:linear-gradient(135deg,rgba(246,196,83,.12),rgba(0,166,81,.10));text-align:center}
-    .quote strong{display:block;font-family:var(--fontA);font-size:clamp(22px,3.2vw,38px);line-height:1.1;color:#fff2c7}
-    .quote p{margin:12px auto 0;max-width:760px;color:#dbe8e0;line-height:1.65;font-weight:800}
-    .contact{padding:26px 20px 28px;text-align:center}
-    .contact h3{margin:0;font-family:var(--fontA);font-size:clamp(28px,4vw,46px);letter-spacing:-.04em}
-    .contact p{margin:12px auto 0;max-width:720px;color:var(--muted);line-height:1.65;font-weight:800}
-    .contact .cta{margin-top:20px}
-    .footer{padding:18px 20px;border-top:1px solid rgba(255,255,255,.08);color:rgba(248,250,252,.66);font-size:12px;line-height:1.55;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .footer b{color:#fff2c7}
-    @media(max-width:820px){.territories,.toolGrid{grid-template-columns:1fr}.top{align-items:flex-start}.nav{width:100%}.nav a{flex:1 1 auto;text-align:center;justify-content:center}.hero{padding-top:36px}.cta .btn{width:100%}}
-    @media(max-width:520px){.page{padding:0 0 50px}.shell{border-radius:0;border-left:none;border-right:none}.top{padding:14px}.brand p{font-size:12px}.hero{padding:34px 15px 28px}.bridge,.tools,.contact{padding-left:14px;padding-right:14px}.territory{padding:18px}.quote{margin-left:14px;margin-right:14px}.footer{padding-left:14px;padding-right:14px}.logo{width:48px;height:48px}}
+    .lead{margin:22px auto 0;max-width:780px;color:#dcece3;font-size:clamp(17px,2vw,22px);line-height:1.65;font-weight:800}
+    .lead strong{color:#fff3cf}
+    .actions{margin:26px auto 0;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 18px;border-radius:16px;border:1px solid rgba(255,255,255,.14);font-family:var(--fontA);font-weight:900;background:rgba(255,255,255,.08);color:#fff;transition:.16s ease;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(246,196,83,.42)}
+    .btn.primary{background:linear-gradient(135deg,#22c55e,#00853f);color:#06140f;border-color:rgba(255,255,255,.18)}
+    .btn.gold{background:rgba(246,196,83,.14);color:#fff3cf;border-color:rgba(246,196,83,.36)}
+    .btn.dark{background:rgba(0,0,0,.22)}
+    .section{margin:16px 18px 0;padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));box-shadow:0 16px 38px rgba(0,0,0,.18)}
+    .section h3{margin:0;font-family:var(--fontA);font-size:clamp(25px,4vw,42px);line-height:1.05;letter-spacing:-.04em}
+    .section h3 span{color:var(--gold)}
+    .section p{margin:10px 0 0;color:var(--muted);font-size:15.5px;line-height:1.68;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+    .card{padding:18px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.14)}
+    .card .emoji{font-size:30px;display:block;margin-bottom:10px}
+    .card h4{margin:0;font-family:var(--fontA);font-size:21px;line-height:1.15}
+    .card p{font-size:14px;margin-top:8px}
+    .miniActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .miniBtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border-radius:999px;border:1px solid rgba(246,196,83,.28);background:rgba(246,196,83,.08);font-family:var(--fontA);font-size:12px;font-weight:900;color:#fff3cf}
+    .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+    .tool{padding:15px;border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05)}
+    .tool strong{display:block;font-family:var(--fontA);font-size:16px}
+    .tool span{display:block;margin-top:5px;color:rgba(248,250,252,.72);font-size:13px;line-height:1.45;font-weight:700}
+    .promise{border-color:rgba(246,196,83,.32);background:radial-gradient(700px 240px at 10% 0%,rgba(246,196,83,.14),transparent 60%),rgba(246,196,83,.06)}
+    .hub{border-color:rgba(0,166,81,.32);background:radial-gradient(700px 240px at 90% 0%,rgba(0,166,81,.18),transparent 60%),rgba(0,166,81,.06)}
+    .footer{padding:26px 18px 30px;text-align:center;color:rgba(248,250,252,.68);font-size:13px;line-height:1.65}
+    .footer strong{color:#fff3cf}
+    .mobileFab{position:fixed;right:16px;bottom:16px;z-index:50;display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:999px;background:linear-gradient(135deg,#f6c453,#22c55e);color:#06140f;font-family:var(--fontA);font-size:24px;font-weight:900;box-shadow:0 16px 38px rgba(0,0,0,.42)}
+    @media(max-width:760px){
+      .page{padding:0 0 96px}.shell{border-radius:0;border-left:0;border-right:0}.topbar{padding:13px 14px}.chips{width:100%;justify-content:flex-start}.hero{padding:34px 16px 26px}.actions{flex-direction:column}.btn{width:100%}.section{margin:14px 12px 0;padding:18px}.grid,.tools{grid-template-columns:1fr}.brand p{font-size:12px}.chip{font-size:10px;padding:7px 9px}
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <div class="shell">
-      <header class="top">
-        <a class="brand" href="#top" aria-label="Accueil DIGIYLYFE">
-          <div class="logo"><img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="Logo DIGIYLYFE"></div>
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Retour en haut">
+          <div class="logo"><img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="Logo DIGIYLYFE" /></div>
           <div>
             <h1>DIGIYLYFE</h1>
-            <p>Présence digitale simple · outils métier · 0% commission</p>
+            <p>Trouver, contacter, avancer sans détour · BY DIGIYLYFE</p>
           </div>
         </a>
-        <nav class="nav" aria-label="Navigation principale">
-          <a href="#afrique">Afrique</a>
-          <a href="#france">France</a>
-          <a href="#outils">Outils</a>
-          <a class="gold" href="#contact">Contact</a>
+        <nav class="chips" aria-label="Repères DIGIYLYFE">
+          <span class="chip gold">0% commission</span>
+          <span class="chip">Paiement direct</span>
+          <span class="chip">Territoire vivant</span>
         </nav>
       </header>
 
       <section id="top" class="hero">
-        <div class="eyebrow"><span class="dot"></span> De Saly à Sarlat</div>
-        <h2>Une maison mère. <span>Deux terrains.</span></h2>
+        <div class="kicker"><span class="dot"></span>DIGIYLYFE — territoire vivant</div>
+        <h2>LE BONHEUR <span>BUSINESS</span> EST LÀ ICI.</h2>
         <p class="lead">
-          <strong>DIGIYLYFE aide les pros du terrain à rester visibles, organisés et payés directement.</strong><br>
-          Même mission au Sénégal, en Afrique et en France : donner aux activités locales une présence digitale simple, humaine et directe.
+          Le complément de WhatsApp pour les pros du terrain. <strong>DIGIYLYFE</strong> donne une présence digitale simple,
+          des outils métier utiles et <strong>0% commission</strong>.
+          Un chauffeur, un logement, une réservation, un artisan, une boutique : le public trouve une vraie personne,
+          au bon moment, sans détour.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="#afrique">🇸🇳 Je suis au Sénégal / Afrique</a>
-          <a class="btn gold" href="#france">🇫🇷 Je suis en France</a>
-          <a class="btn ghost" href="#outils">🧰 Voir les outils</a>
+        <div class="actions">
+          <a class="btn primary" href="#trouver">🗺️ Trouver maintenant</a>
+          <a class="btn gold" href="#territoires">🌍 Afrique / France</a>
+          <a class="btn dark" href="#hub">🏢 Entrer côté activité</a>
+          <a class="btn" href="https://digiylyfe.net/" target="_blank" rel="noopener">🎧 Écouter la vision</a>
+          <a class="btn" href="#circuler">📤 Faire circuler</a>
         </div>
-        <p class="mini">
-          DIGIYLYFE complète WhatsApp avec des pages claires, des outils métier simples, des QR utiles et une logique saine : le client contacte le professionnel, et le professionnel reçoit son argent directement.
-        </p>
       </section>
 
-      <section class="bridge" aria-label="Deux territoires">
-        <div class="sectionTitle">
-          <div class="k">Même mission · deux portes</div>
-          <h3>Le terrain garde la main, <span>ici comme là-bas.</span></h3>
-          <p>
-            Le site reste unique, mais l’entrée s’adapte au territoire. En Afrique, on parle usages locaux, WhatsApp, Wave, QR et économie de terrain. En France, on parle petits pros, artisans, commerces, locations, visibilité et simplicité.
-          </p>
-        </div>
-
-        <div class="territories">
-          <article id="afrique" class="territory afrique">
-            <div class="flag">🇸🇳</div>
+      <section id="territoires" class="section">
+        <h3>Une même mission, <span>deux terrains.</span></h3>
+        <p>
+          DIGIYLYFE reste une seule maison. Le message s’adapte au territoire, mais la promesse ne change pas :
+          rendre les activités locales visibles, organisées et payées directement.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <span class="emoji">🇸🇳</span>
             <h4>Sénégal / Afrique</h4>
-            <p>
-              Pour les chauffeurs, loueurs, commerces, vendeuses, artisans, services locaux et lieux à découvrir. Une présence digitale claire, ancrée dans les usages réels : WhatsApp, QR, paiement direct, 0% commission.
-            </p>
-            <div class="chips">
-              <span class="chip">WhatsApp</span><span class="chip">Wave</span><span class="chip">QR</span><span class="chip">Terrain local</span><span class="chip">0% commission</span>
-            </div>
-            <div class="actions">
-              <a class="btn primary" href="#outils">Découvrir les outils</a>
-              <a class="btn ghost" href="https://wa.me/221771342889">Parler à DIGIY</a>
-            </div>
+            <p>WhatsApp, Wave, QR, contact direct, économie locale, pros du terrain et souveraineté numérique enracinée.</p>
+            <div class="miniActions"><a class="miniBtn" href="#trouver">Voir les portes utiles</a></div>
           </article>
-
-          <article id="france" class="territory france">
-            <div class="flag">🇫🇷</div>
-            <h4>DIGIYLYFE France</h4>
-            <p>
-              Pour les petites activités locales : artisans, commerces indépendants, locations saisonnières, services de proximité et auto-entrepreneurs. Une page claire, des demandes directes, moins de dépendance aux grandes plateformes.
-            </p>
-            <div class="chips">
-              <span class="chip">Petits pros</span><span class="chip">Artisans</span><span class="chip">Commerces</span><span class="chip">Locations</span><span class="chip">Lien direct</span>
-            </div>
-            <div class="actions">
-              <a class="btn gold" href="#contact">Demander DIGIY France</a>
-              <a class="btn ghost" href="#outils">Voir les usages</a>
-            </div>
+          <article class="card">
+            <span class="emoji">🇫🇷</span>
+            <h4>France</h4>
+            <p>Petits pros, artisans, commerces, locations, services locaux : présence simple, lien client direct, sans usine à gaz.</p>
+            <div class="miniActions"><a class="miniBtn" href="#hub">Équiper mon activité</a></div>
           </article>
         </div>
       </section>
 
-      <section id="outils" class="tools">
-        <div class="sectionTitle">
-          <div class="k">Outils métier</div>
-          <h3>Une présence simple, <span>un geste utile.</span></h3>
-          <p>
-            Chaque outil parle métier : montrer, vendre, réserver, conduire, louer, proposer ses services, suivre son argent.
-          </p>
-        </div>
-
-        <div class="toolGrid">
-          <div class="tool">🏪 <b>Mon commerce</b><span>Caisse simple, boutique visible, suivi d’activité.</span></div>
-          <div class="tool">🚕 <b>Je conduis</b><span>Tarifs, profil chauffeur, contact direct client.</span></div>
-          <div class="tool">🏡 <b>Je loue</b><span>Logement visible, dates, demandes, paiement direct.</span></div>
-          <div class="tool">🛍️ <b>Je vends</b><span>Boutique en ligne, produits, contact direct, 0% commission.</span></div>
-          <div class="tool">🛠️ <b>Je propose mes services</b><span>Artisans, travaux, dépannage, entretien, services pratiques.</span></div>
-          <div class="tool">📅 <b>Je réserve</b><span>Rendez-vous, créneaux, clients, organisation simple.</span></div>
-          <div class="tool">💰 <b>Mon argent</b><span>Voir ce qui entre, sort, et ce qu’il reste vraiment.</span></div>
-          <div class="tool">🗺️ <b>Je fais découvrir mon lieu</b><span>Spots, expériences, lieux utiles, tourisme local.</span></div>
+      <section id="trouver" class="section">
+        <h3>Je cherche <span>quelqu’un de sérieux.</span></h3>
+        <p>Des portes simples pour le public : trouver vite, contacter direct, avancer sans détour.</p>
+        <div class="tools">
+          <a class="tool" href="#hub"><strong>🚕 Un chauffeur</strong><span>Trajet, tarif, contact WhatsApp.</span></a>
+          <a class="tool" href="#hub"><strong>🏡 Un logement</strong><span>Voir un lieu, contacter, réserver.</span></a>
+          <a class="tool" href="#hub"><strong>📅 Une réservation</strong><span>Choisir son moment sans perdre de temps.</span></a>
+          <a class="tool" href="#hub"><strong>🛍️ Une boutique</strong><span>Produits, contact direct, 0% commission.</span></a>
+          <a class="tool" href="#hub"><strong>🛠️ Un artisan</strong><span>Service local, personne réelle, lien direct.</span></a>
+          <a class="tool" href="#hub"><strong>🗺️ Un lieu à découvrir</strong><span>Faire venir pour de vrai.</span></a>
         </div>
       </section>
 
-      <section class="quote">
-        <strong>0% commission. Paiement direct au professionnel.</strong>
+      <section id="activite" class="section">
+        <h3>J’ai une activité, <span>je veux être visible.</span></h3>
+        <p>Une activité locale n’a pas besoin d’une usine. Elle a besoin d’être trouvée, comprise, contactée et payée directement.</p>
+        <div class="tools">
+          <a class="tool" href="#hub"><strong>🚕 Je conduis</strong><span>Tarifs, trajets, fiche chauffeur.</span></a>
+          <a class="tool" href="#hub"><strong>🏡 Je loue</strong><span>Lieu, dates, réservations.</span></a>
+          <a class="tool" href="#hub"><strong>🛍️ Je vends</strong><span>Boutique, produits, demandes.</span></a>
+          <a class="tool" href="#hub"><strong>💳 J’encaisse</strong><span>Caisse simple et suivi.</span></a>
+          <a class="tool" href="#hub"><strong>🛠️ Je propose mes services</strong><span>Présenter son savoir-faire.</span></a>
+          <a class="tool" href="#hub"><strong>💰 Je suis mon argent</strong><span>Voir ce qui entre, sort et reste.</span></a>
+        </div>
+      </section>
+
+      <section class="section promise">
+        <h3>0% commission. <span>Paiement direct.</span></h3>
         <p>
-          DIGIYLYFE n’est pas là pour enfermer le client dans une plateforme. DIGIYLYFE aide le client à arriver chez le professionnel, et le professionnel à garder son lien, son identité et son argent.
+          DIGIYLYFE ne garde pas l’argent du professionnel. Le client contacte, réserve ou paie directement.
+          DIGIY aide le pro à être visible, organisé et choisi.
         </p>
       </section>
 
-      <section id="contact" class="contact">
-        <h3>Tu veux poser DIGIY sur ton activité ?</h3>
+      <section id="hub" class="section hub">
+        <h3>DIGIY HUB, <span>le passage à l’action.</span></h3>
         <p>
-          Envoie ton métier, ta ville et ton besoin. On regarde la porte la plus simple : Afrique, France, ou les deux. Une chose d’abord : que ton activité soit claire, visible et utile au client.
+          La vitrine explique. Le HUB oriente : choisir son outil, voir les packs, activer un abonnement,
+          retrouver son espace ou rejoindre le bon module.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="https://wa.me/221771342889?text=Bonjour%20DIGIY%2C%20je%20veux%20poser%20mon%20activit%C3%A9%20sur%20DIGIYLYFE">WhatsApp DIGIY</a>
-          <a class="btn ghost" href="mailto:contact@digiylyfe.com?subject=Demande%20DIGIYLYFE">Écrire par email</a>
+        <div class="actions">
+          <a class="btn primary" href="https://digiy-hub.github.io/digiy-hub/" target="_blank" rel="noopener">🏢 Entrer dans le HUB DIGIY</a>
+          <a class="btn gold" href="https://wa.me/221771342889" target="_blank" rel="noopener">🤝 Contacter DIGIY</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>L’esprit avant <span>l’outil.</span></h3>
+        <p>
+          Avant les boutons, il y a une vision : le terrain garde la main. DIGIYLYFE complète WhatsApp avec une présence digitale
+          et des logiciels métier simples. Les pros restent visibles, travaillent mieux et reçoivent leur argent directement.
+        </p>
+        <div class="actions">
+          <a class="btn gold" href="https://digiylyfe.net/" target="_blank" rel="noopener">🎧 Lire / écouter la vision</a>
+        </div>
+      </section>
+
+      <section id="circuler" class="section">
+        <h3>Fais circuler <span>DIGIY.</span></h3>
+        <p>Utilise le site, partage le lien, recommande un pro sérieux. Le terrain vit quand les clients trouvent les bonnes personnes.</p>
+        <div class="grid">
+          <article class="card"><span class="emoji">1️⃣</span><h4>Utilise le site</h4><p>Trouve un chauffeur, un logement, un artisan, une boutique ou un service autour de toi.</p></article>
+          <article class="card"><span class="emoji">2️⃣</span><h4>Partage DIGIY</h4><p>Envoie le lien à quelqu’un qui cherche ou à quelqu’un qui travaille.</p></article>
+          <article class="card"><span class="emoji">3️⃣</span><h4>Recommande un pro</h4><p>Tu connais quelqu’un de sérieux ? Envoie son contact, le terrain le révélera.</p></article>
+          <article class="card"><span class="emoji">∞</span><h4>Le terrain garde la main</h4><p>De Saly à Sarlat, DIGIYLYFE avance doucement, mais solidement.</p></article>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://wa.me/?text=Découvre%20DIGIYLYFE%20:%20https://digiylyfe.com/" target="_blank" rel="noopener">📤 Partager sur WhatsApp</a>
+          <a class="btn gold" href="https://wa.me/221771342889?text=Bonjour%20DIGIY%2C%20je%20veux%20sugg%C3%A9rer%20un%20pro%20s%C3%A9rieux." target="_blank" rel="noopener">🤝 Suggérer un pro</a>
         </div>
       </section>
 
       <footer class="footer">
-        <span><b>DIGIYLYFE</b> — De Saly à Sarlat, une présence digitale simple pour les activités locales.</span>
-        <span>0% commission · paiement direct · terrain vivant</span>
+        <strong>DIGIYLYFE</strong> · 0% commission · paiement direct · contact utile · territoire vivant<br />
+        L’Afrique enracinée, connectée au monde ∞ · De Saly à Sarlat, une même mission.
       </footer>
     </div>
   </main>
+  <a class="mobileFab" href="#hub" aria-label="Entrer dans le HUB DIGIY">🏢</a>
 </body>
 </html>
 
