@@ -1,250 +1,1003 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>DIGIYLYFE — Présence digitale simple pour les pros du terrain</title>
-  <meta name="description" content="DIGIYLYFE aide les activités locales à être visibles, organisées et payées directement. 0% commission. De Saly à Sarlat, le terrain garde la main." />
-  <meta name="theme-color" content="#00853f" />
-  <meta property="og:title" content="DIGIYLYFE — Le bonheur business est là ici" />
-  <meta property="og:description" content="Présence digitale simple, outils métier utiles, paiement direct au professionnel, 0% commission." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://digiylyfe.com/" />
-  <meta property="og:image" content="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>DIGIYLYFE — De Saly à Sarlat, le terrain garde la main</title>
+  <meta name="description" content="DIGIYLYFE donne aux activités locales une présence digitale simple, humaine et directe. 0% commission. Paiement direct au professionnel."/>
+  <meta name="theme-color" content="#00853f"/>
+  <meta property="og:title" content="DIGIYLYFE — Le bonheur business est là ici"/>
+  <meta property="og:description" content="Le complément de WhatsApp pour les pros du terrain. Présence digitale, outils simples, 0% commission."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://digiylyfe.com/"/>
+  <meta property="og:image" content="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"/>
   <style>
     :root{
-      --green:#00853f;
-      --green2:#00a651;
+      --green:#00a651;
+      --green2:#00853f;
       --dark:#04130d;
-      --dark2:#082419;
+      --dark2:#082016;
       --gold:#f6c453;
       --white:#f8fafc;
-      --muted:rgba(248,250,252,.76);
-      --line:rgba(255,255,255,.14);
-      --shadow:0 22px 70px rgba(0,0,0,.35);
+      --muted:rgba(248,250,252,.78);
+      --line:rgba(255,255,255,.16);
       --fontA:"Outfit",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       --fontB:"Manrope",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
+
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html{
+      height:100%;
+      scroll-behavior:smooth;
+      scroll-snap-type:y mandatory;
+      overflow-y:auto;
+      background:var(--dark);
+    }
     body{
       margin:0;
-      min-height:100vh;
+      min-height:100%;
       font-family:var(--fontB);
       color:var(--white);
       background:
-        radial-gradient(900px 540px at 10% 0%,rgba(0,166,81,.34),transparent 60%),
-        radial-gradient(800px 520px at 92% 8%,rgba(246,196,83,.18),transparent 62%),
-        linear-gradient(180deg,#067a3a 0%,#083123 36%,#04130d 100%);
+        radial-gradient(900px 520px at 10% 0%,rgba(0,166,81,.34),transparent 60%),
+        radial-gradient(760px 440px at 92% 14%,rgba(246,196,83,.16),transparent 62%),
+        linear-gradient(180deg,#063b24 0%,#04130d 62%,#020806 100%);
       overflow-x:hidden;
+      font-size:18px;
     }
+
     a{color:inherit;text-decoration:none}
-    .page{width:min(1160px,100%);margin:0 auto;padding:14px 14px 110px}
-    .shell{
-      border:1px solid var(--line);
-      border-radius:28px;
-      background:linear-gradient(180deg,rgba(8,50,32,.70),rgba(4,19,13,.92));
-      box-shadow:var(--shadow);
+    button{font:inherit}
+
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:80;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px max(18px,env(safe-area-inset-left)) 12px max(18px,env(safe-area-inset-left));
+      background:linear-gradient(180deg,rgba(4,19,13,.92),rgba(4,19,13,.58));
+      border-bottom:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(14px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(246,196,83,.34);
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      box-shadow:0 10px 28px rgba(0,0,0,.32),0 0 0 4px rgba(246,196,83,.08);
+      flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brandText strong{
+      display:block;
+      font-family:var(--fontA);
+      font-size:22px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:.8px;
+    }
+    .brandText span{
+      display:block;
+      margin-top:4px;
+      color:rgba(248,250,252,.78);
+      font-weight:800;
+      font-size:14px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:48vw;
+    }
+
+    .topActions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .topChip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      font-family:var(--fontA);
+      font-size:14px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .topChip.gold{
+      color:#06140f;
+      border-color:rgba(246,196,83,.8);
+      background:linear-gradient(135deg,#f6c453,#22c55e);
+    }
+
+    .snap{
+      min-height:100svh;
+      height:100svh;
+      scroll-snap-align:start;
+      scroll-snap-stop:always;
+      position:relative;
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+      padding:84px 18px 100px;
       overflow:hidden;
     }
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
-      padding:16px 18px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.16);
-      position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+
+    .snap::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(720px 360px at 10% 20%,rgba(0,166,81,.18),transparent 62%),
+        radial-gradient(640px 320px at 90% 20%,rgba(246,196,83,.12),transparent 60%);
+      opacity:.95;
     }
-    .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .logo{
-      width:52px;height:52px;border-radius:16px;overflow:hidden;flex:0 0 auto;
-      border:1px solid rgba(246,196,83,.34);background:rgba(0,0,0,.18);
-      box-shadow:0 0 0 4px rgba(246,196,83,.08);
+
+    .screen{
+      position:relative;
+      z-index:1;
+      width:min(1180px,100%);
+      min-height:0;
+      display:grid;
+      grid-template-rows:1fr auto;
+      gap:18px;
     }
-    .logo img{width:100%;height:100%;display:block;object-fit:cover}
-    .brand h1{font-family:var(--fontA);font-size:19px;line-height:1;margin:0;letter-spacing:.6px}
-    .brand p{margin:5px 0 0;color:var(--muted);font-size:13px;font-weight:800}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .chip{padding:8px 11px;border-radius:999px;border:1px solid var(--line);font-family:var(--fontA);font-size:11px;font-weight:900;background:rgba(255,255,255,.08)}
-    .chip.gold{color:#fff1c4;border-color:rgba(246,196,83,.38);background:rgba(246,196,83,.11)}
-    .hero{padding:46px 20px 34px;text-align:center}
-    .kicker{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(246,196,83,.34);background:rgba(246,196,83,.10);color:#fff3cf;font-family:var(--fontA);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 6px rgba(34,197,94,.14)}
-    .hero h2{margin:22px auto 0;max-width:760px;font-family:var(--fontA);font-size:clamp(46px,8vw,92px);line-height:.9;letter-spacing:-.06em;font-weight:900}
-    .hero h2 span{display:block;color:var(--gold)}
-    .lead{margin:22px auto 0;max-width:780px;color:#dcece3;font-size:clamp(17px,2vw,22px);line-height:1.65;font-weight:800}
-    .lead strong{color:#fff3cf}
-    .actions{margin:26px auto 0;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 18px;border-radius:16px;border:1px solid rgba(255,255,255,.14);font-family:var(--fontA);font-weight:900;background:rgba(255,255,255,.08);color:#fff;transition:.16s ease;box-shadow:0 10px 26px rgba(0,0,0,.18)}
-    .btn:hover{transform:translateY(-2px);border-color:rgba(246,196,83,.42)}
-    .btn.primary{background:linear-gradient(135deg,#22c55e,#00853f);color:#06140f;border-color:rgba(255,255,255,.18)}
-    .btn.gold{background:rgba(246,196,83,.14);color:#fff3cf;border-color:rgba(246,196,83,.36)}
-    .btn.dark{background:rgba(0,0,0,.22)}
-    .section{margin:16px 18px 0;padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));box-shadow:0 16px 38px rgba(0,0,0,.18)}
-    .section h3{margin:0;font-family:var(--fontA);font-size:clamp(25px,4vw,42px);line-height:1.05;letter-spacing:-.04em}
-    .section h3 span{color:var(--gold)}
-    .section p{margin:10px 0 0;color:var(--muted);font-size:15.5px;line-height:1.68;font-weight:700}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
-    .card{padding:18px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.14)}
-    .card .emoji{font-size:30px;display:block;margin-bottom:10px}
-    .card h4{margin:0;font-family:var(--fontA);font-size:21px;line-height:1.15}
-    .card p{font-size:14px;margin-top:8px}
-    .miniActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .miniBtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border-radius:999px;border:1px solid rgba(246,196,83,.28);background:rgba(246,196,83,.08);font-family:var(--fontA);font-size:12px;font-weight:900;color:#fff3cf}
-    .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
-    .tool{padding:15px;border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05)}
-    .tool strong{display:block;font-family:var(--fontA);font-size:16px}
-    .tool span{display:block;margin-top:5px;color:rgba(248,250,252,.72);font-size:13px;line-height:1.45;font-weight:700}
-    .promise{border-color:rgba(246,196,83,.32);background:radial-gradient(700px 240px at 10% 0%,rgba(246,196,83,.14),transparent 60%),rgba(246,196,83,.06)}
-    .hub{border-color:rgba(0,166,81,.32);background:radial-gradient(700px 240px at 90% 0%,rgba(0,166,81,.18),transparent 60%),rgba(0,166,81,.06)}
-    .footer{padding:26px 18px 30px;text-align:center;color:rgba(248,250,252,.68);font-size:13px;line-height:1.65}
-    .footer strong{color:#fff3cf}
-    .mobileFab{position:fixed;right:16px;bottom:16px;z-index:50;display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:999px;background:linear-gradient(135deg,#f6c453,#22c55e);color:#06140f;font-family:var(--fontA);font-size:24px;font-weight:900;box-shadow:0 16px 38px rgba(0,0,0,.42)}
+
+    .panel{
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:32px;
+      background:
+        radial-gradient(760px 360px at 20% 0%,rgba(246,196,83,.11),transparent 64%),
+        linear-gradient(180deg,rgba(13,56,39,.78),rgba(4,19,13,.84));
+      box-shadow:0 22px 70px rgba(0,0,0,.42),0 0 0 1px rgba(246,196,83,.06);
+      padding:clamp(24px,4vw,54px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:0;
+      overflow:hidden;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      width:max-content;
+      max-width:100%;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(246,196,83,.36);
+      background:rgba(246,196,83,.10);
+      color:#fff3cf;
+      font-family:var(--fontA);
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    h1,h2,h3,p{margin:0}
+    h1{
+      margin-top:22px;
+      max-width:12ch;
+      font-family:var(--fontA);
+      font-size:clamp(58px,8.8vw,112px);
+      line-height:.88;
+      letter-spacing:-.06em;
+      font-weight:900;
+    }
+    h1 span,.goldText{color:var(--gold)}
+    h2{
+      margin-top:18px;
+      font-family:var(--fontA);
+      font-size:clamp(42px,6vw,76px);
+      line-height:.94;
+      letter-spacing:-.055em;
+      font-weight:900;
+      max-width:13ch;
+    }
+    h3{
+      font-family:var(--fontA);
+      font-size:clamp(24px,3vw,36px);
+      line-height:1.05;
+      font-weight:900;
+    }
+    .lead{
+      margin-top:20px;
+      max-width:760px;
+      color:#e8f5ed;
+      font-size:clamp(21px,2.35vw,30px);
+      line-height:1.48;
+      font-weight:800;
+    }
+    .lead strong{color:#fff}
+    .text{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:clamp(18px,1.6vw,22px);
+      line-height:1.62;
+      font-weight:700;
+      max-width:76ch;
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(280px,.75fr);
+      gap:24px;
+      align-items:center;
+      height:100%;
+    }
+
+    .heroBadge{
+      border-radius:30px;
+      border:1px solid rgba(246,196,83,.28);
+      background:
+        radial-gradient(460px 260px at 50% 0%,rgba(246,196,83,.18),transparent 66%),
+        linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+      padding:24px;
+      text-align:center;
+      box-shadow:0 18px 44px rgba(0,0,0,.28);
+    }
+    .heroBadge img{
+      width:min(230px,72%);
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 12px 36px rgba(0,0,0,.34);
+      display:block;
+      margin:0 auto 18px;
+    }
+    .heroBadge strong{
+      display:block;
+      font-family:var(--fontA);
+      color:#fff3cf;
+      font-size:30px;
+      line-height:1.05;
+      font-weight:900;
+    }
+    .heroBadge span{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      line-height:1.5;
+      font-weight:800;
+      font-size:17px;
+    }
+
+    .cards2,.cards3,.cards4{
+      display:grid;
+      gap:18px;
+      margin-top:28px;
+    }
+    .cards2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .cards3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .cards4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+    .card{
+      min-height:180px;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg,rgba(255,255,255,.105),rgba(255,255,255,.045));
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:14px;
+      box-shadow:0 14px 36px rgba(0,0,0,.20);
+    }
+    .card.big{min-height:230px}
+    .icon{
+      font-size:40px;
+      line-height:1;
+      display:block;
+    }
+    .card p{
+      color:rgba(248,250,252,.80);
+      font-size:18px;
+      line-height:1.5;
+      font-weight:750;
+    }
+    .card small{
+      display:block;
+      color:#fff3cf;
+      font-family:var(--fontA);
+      font-size:15px;
+      font-weight:900;
+      line-height:1.35;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+    .btn{
+      min-height:62px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:0 24px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      font-family:var(--fontA);
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+      text-align:center;
+      transition:transform .16s ease,background .16s ease,border-color .16s ease;
+    }
+    .btn:hover{transform:translateY(-2px);border-color:rgba(246,196,83,.42);background:rgba(255,255,255,.12)}
+    .btn.primary{
+      background:linear-gradient(135deg,#f6c453 0%,#22c55e 100%);
+      border-color:rgba(246,196,83,.74);
+      color:#06140f;
+      box-shadow:0 16px 36px rgba(0,0,0,.30),0 0 0 4px rgba(246,196,83,.10);
+    }
+    .btn.green{
+      background:linear-gradient(135deg,#00a651,#00853f);
+      border-color:rgba(0,166,81,.62);
+      color:#fff;
+    }
+
+    .paves{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+    }
+    .pave{
+      min-height:86px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(4,19,13,.72);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:16px;
+      box-shadow:0 12px 34px rgba(0,0,0,.28);
+      backdrop-filter:blur(12px);
+      transition:transform .16s ease,border-color .16s ease,background .16s ease;
+    }
+    .pave:hover{transform:translateY(-2px);border-color:rgba(246,196,83,.42);background:rgba(8,32,22,.88)}
+    .pave strong{
+      display:block;
+      font-family:var(--fontA);
+      font-size:17px;
+      line-height:1.15;
+      font-weight:900;
+    }
+    .pave span{
+      display:block;
+      margin-top:4px;
+      color:rgba(248,250,252,.70);
+      font-size:13px;
+      line-height:1.25;
+      font-weight:800;
+    }
+    .pave .miniIcon{
+      width:46px;
+      height:46px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(246,196,83,.10);
+      border:1px solid rgba(246,196,83,.18);
+      font-size:24px;
+      flex:0 0 auto;
+    }
+
+    .bottomNav{
+      position:fixed;
+      left:50%;
+      bottom:14px;
+      transform:translateX(-50%);
+      z-index:90;
+      width:min(920px,calc(100% - 24px));
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:8px;
+      padding:8px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(4,19,13,.82);
+      backdrop-filter:blur(16px);
+      box-shadow:0 16px 44px rgba(0,0,0,.40);
+    }
+    .navBtn{
+      min-height:54px;
+      border-radius:18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:3px;
+      color:#fff;
+      background:transparent;
+      border:1px solid transparent;
+      font-family:var(--fontA);
+      font-size:12px;
+      font-weight:900;
+      text-align:center;
+    }
+    .navBtn:hover,.navBtn.active{
+      background:rgba(246,196,83,.12);
+      border-color:rgba(246,196,83,.25);
+      color:#fff3cf;
+    }
+    .navBtn b{font-size:20px;line-height:1}
+
+    .footerLinks{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+      margin-top:28px;
+    }
+    .footerBox{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      border-radius:24px;
+      padding:20px;
+    }
+    .footerBox strong{
+      display:block;
+      font-family:var(--fontA);
+      font-size:19px;
+      color:#fff3cf;
+      margin-bottom:12px;
+      font-weight:900;
+    }
+    .footerBox a{
+      display:flex;
+      padding:11px 0;
+      color:rgba(248,250,252,.84);
+      font-weight:800;
+      font-size:16px;
+      line-height:1.25;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+    .footerBox a:first-of-type{border-top:none}
+
+    .note{
+      margin-top:20px;
+      color:#fff3cf;
+      font-family:var(--fontA);
+      font-weight:900;
+      font-size:18px;
+      line-height:1.45;
+    }
+
+    .tiny{
+      margin-top:18px;
+      color:rgba(248,250,252,.62);
+      font-size:14px;
+      line-height:1.5;
+      font-weight:700;
+    }
+
+    @media(max-width:980px){
+      .topChip:not(.gold){display:none}
+      .heroGrid{grid-template-columns:1fr}
+      .heroBadge{display:none}
+      .cards4{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cards3{grid-template-columns:1fr}
+      .paves{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .footerLinks{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+
     @media(max-width:760px){
-      .page{padding:0 0 96px}.shell{border-radius:0;border-left:0;border-right:0}.topbar{padding:13px 14px}.chips{width:100%;justify-content:flex-start}.hero{padding:34px 16px 26px}.actions{flex-direction:column}.btn{width:100%}.section{margin:14px 12px 0;padding:18px}.grid,.tools{grid-template-columns:1fr}.brand p{font-size:12px}.chip{font-size:10px;padding:7px 9px}
+      html{scroll-snap-type:y mandatory}
+      body{font-size:18px}
+      .topbar{padding:12px 12px 10px}
+      .logo{width:44px;height:44px;border-radius:15px}
+      .brandText strong{font-size:19px}
+      .brandText span{font-size:13px;max-width:54vw}
+      .topActions{display:none}
+
+      .snap{
+        height:100svh;
+        min-height:100svh;
+        padding:74px 12px 92px;
+      }
+      .panel{
+        border-radius:26px;
+        padding:22px;
+      }
+      .kicker{
+        font-size:12px;
+        padding:8px 11px;
+      }
+      h1{
+        font-size:clamp(50px,17vw,76px);
+        line-height:.88;
+        margin-top:18px;
+      }
+      h2{
+        font-size:clamp(38px,13vw,58px);
+        line-height:.92;
+      }
+      .lead{
+        font-size:20px;
+        line-height:1.48;
+        margin-top:16px;
+      }
+      .text{
+        font-size:17px;
+        line-height:1.55;
+      }
+      .cards2,.cards4{
+        grid-template-columns:1fr;
+        gap:12px;
+        margin-top:18px;
+      }
+      .card{
+        min-height:0;
+        padding:18px;
+        border-radius:22px;
+        gap:10px;
+      }
+      .card.big{min-height:0}
+      .icon{font-size:31px}
+      .card p{font-size:16px;line-height:1.42}
+      .card small{font-size:13px}
+      .actions{gap:10px;margin-top:18px}
+      .btn{
+        width:100%;
+        min-height:58px;
+        font-size:16px;
+        border-radius:17px;
+      }
+      .paves{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+      .pave{
+        min-height:70px;
+        border-radius:19px;
+        padding:12px;
+      }
+      .pave .miniIcon{width:42px;height:42px;border-radius:14px;font-size:22px}
+      .pave strong{font-size:16px}
+      .pave span{font-size:12px}
+
+      .bottomNav{
+        bottom:8px;
+        width:calc(100% - 16px);
+        grid-template-columns:repeat(5,minmax(0,1fr));
+        gap:4px;
+        border-radius:22px;
+        padding:6px;
+      }
+      .navBtn{
+        min-height:54px;
+        font-size:10px;
+        border-radius:16px;
+      }
+      .navBtn b{font-size:18px}
+      .footerLinks{grid-template-columns:1fr;gap:10px;margin-top:18px}
+      .footerBox{padding:16px;border-radius:20px}
+      .footerBox strong{font-size:17px}
+      .footerBox a{font-size:15px;padding:9px 0}
+      .note{font-size:16px}
+      .tiny{font-size:12px}
+    }
+
+    @media(max-height:720px){
+      .lead{font-size:18px;line-height:1.42}
+      .text{font-size:16px;line-height:1.45}
+      h1{font-size:clamp(44px,11vw,78px)}
+      h2{font-size:clamp(34px,8vw,58px)}
+      .card{padding:16px}
+      .card p{font-size:15px}
+      .pave{min-height:64px}
     }
   </style>
 </head>
+
 <body>
-  <main class="page">
-    <div class="shell">
-      <header class="topbar">
-        <a class="brand" href="#top" aria-label="Retour en haut">
-          <div class="logo"><img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="Logo DIGIYLYFE" /></div>
-          <div>
-            <h1>DIGIYLYFE</h1>
-            <p>Trouver, contacter, avancer sans détour · BY DIGIYLYFE</p>
+  <header class="topbar">
+    <a class="brand" href="#accueil" aria-label="Retour accueil">
+      <span class="logo">
+        <img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="Logo DIGIYLYFE"/>
+      </span>
+      <span class="brandText">
+        <strong>DIGIYLYFE</strong>
+        <span>Trouver, contacter, avancer sans détour</span>
+      </span>
+    </a>
+    <nav class="topActions" aria-label="Navigation rapide">
+      <a class="topChip" href="#territoires">Afrique / France</a>
+      <a class="topChip" href="#chercher">Trouver</a>
+      <a class="topChip" href="#activite">J’ai une activité</a>
+      <a class="topChip gold" href="#hub">HUB DIGIY</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ÉCRAN 1 -->
+    <section class="snap" id="accueil">
+      <div class="screen">
+        <div class="panel">
+          <div class="heroGrid">
+            <div>
+              <span class="kicker">DIGIYLYFE — TERRITOIRE VIVANT</span>
+              <h1>LE BONHEUR <span>BUSINESS</span> EST LÀ ICI.</h1>
+              <p class="lead">
+                Le complément de WhatsApp pour les pros du terrain.
+                Présence digitale simple, outils utiles, <strong>0% commission</strong>,
+                paiement direct au professionnel.
+              </p>
+              <p class="text">
+                Un chauffeur, un logement, une réservation, un artisan, une boutique :
+                le public trouve une vraie personne, au bon moment, sans détour.
+              </p>
+              <div class="actions">
+                <a class="btn primary" href="#chercher">🗺️ Trouver maintenant</a>
+                <a class="btn" href="#territoires">🌍 Afrique / France</a>
+                <a class="btn green" href="#activite">🏢 J’ai une activité</a>
+              </div>
+            </div>
+
+            <aside class="heroBadge" aria-label="Signature DIGIYLYFE">
+              <img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="DIGIYLYFE"/>
+              <strong>BY DIGIYLYFE</strong>
+              <span>0% commission · Paiement direct · Le terrain garde la main.</span>
+            </aside>
           </div>
-        </a>
-        <nav class="chips" aria-label="Repères DIGIYLYFE">
-          <span class="chip gold">0% commission</span>
-          <span class="chip">Paiement direct</span>
-          <span class="chip">Territoire vivant</span>
-        </nav>
-      </header>
-
-      <section id="top" class="hero">
-        <div class="kicker"><span class="dot"></span>DIGIYLYFE — territoire vivant</div>
-        <h2>LE BONHEUR <span>BUSINESS</span> EST LÀ ICI.</h2>
-        <p class="lead">
-          Le complément de WhatsApp pour les pros du terrain. <strong>DIGIYLYFE</strong> donne une présence digitale simple,
-          des outils métier utiles et <strong>0% commission</strong>.
-          Un chauffeur, un logement, une réservation, un artisan, une boutique : le public trouve une vraie personne,
-          au bon moment, sans détour.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="#trouver">🗺️ Trouver maintenant</a>
-          <a class="btn gold" href="#territoires">🌍 Afrique / France</a>
-          <a class="btn dark" href="#hub">🏢 Entrer côté activité</a>
-          <a class="btn" href="https://digiylyfe.net/" target="_blank" rel="noopener">🎧 Écouter la vision</a>
-          <a class="btn" href="#circuler">📤 Faire circuler</a>
         </div>
-      </section>
 
-      <section id="territoires" class="section">
-        <h3>Une même mission, <span>deux terrains.</span></h3>
-        <p>
-          DIGIYLYFE reste une seule maison. Le message s’adapte au territoire, mais la promesse ne change pas :
-          rendre les activités locales visibles, organisées et payées directement.
-        </p>
-        <div class="grid">
-          <article class="card">
-            <span class="emoji">🇸🇳</span>
-            <h4>Sénégal / Afrique</h4>
-            <p>WhatsApp, Wave, QR, contact direct, économie locale, pros du terrain et souveraineté numérique enracinée.</p>
-            <div class="miniActions"><a class="miniBtn" href="#trouver">Voir les portes utiles</a></div>
-          </article>
-          <article class="card">
-            <span class="emoji">🇫🇷</span>
-            <h4>France</h4>
-            <p>Petits pros, artisans, commerces, locations, services locaux : présence simple, lien client direct, sans usine à gaz.</p>
-            <div class="miniActions"><a class="miniBtn" href="#hub">Équiper mon activité</a></div>
-          </article>
+        <div class="paves" aria-label="Passages rapides">
+          <a class="pave" href="#chercher"><span class="miniIcon">🗺️</span><span><strong>Trouver</strong><span>Client, service, pro</span></span></a>
+          <a class="pave" href="#territoires"><span class="miniIcon">🌍</span><span><strong>Deux terrains</strong><span>Sénégal · France</span></span></a>
+          <a class="pave" href="#hub"><span class="miniIcon">🧭</span><span><strong>HUB</strong><span>Choisir, activer, avancer</span></span></a>
+          <a class="pave" href="#circuler"><span class="miniIcon">📤</span><span><strong>Faire circuler</strong><span>Partager, recommander</span></span></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="trouver" class="section">
-        <h3>Je cherche <span>quelqu’un de sérieux.</span></h3>
-        <p>Des portes simples pour le public : trouver vite, contacter direct, avancer sans détour.</p>
-        <div class="tools">
-          <a class="tool" href="#hub"><strong>🚕 Un chauffeur</strong><span>Trajet, tarif, contact WhatsApp.</span></a>
-          <a class="tool" href="#hub"><strong>🏡 Un logement</strong><span>Voir un lieu, contacter, réserver.</span></a>
-          <a class="tool" href="#hub"><strong>📅 Une réservation</strong><span>Choisir son moment sans perdre de temps.</span></a>
-          <a class="tool" href="#hub"><strong>🛍️ Une boutique</strong><span>Produits, contact direct, 0% commission.</span></a>
-          <a class="tool" href="#hub"><strong>🛠️ Un artisan</strong><span>Service local, personne réelle, lien direct.</span></a>
-          <a class="tool" href="#hub"><strong>🗺️ Un lieu à découvrir</strong><span>Faire venir pour de vrai.</span></a>
+    <!-- ÉCRAN 2 -->
+    <section class="snap" id="territoires">
+      <div class="screen">
+        <div class="panel">
+          <span class="kicker">Même mission · deux terrains</span>
+          <h2>De Saly à <span class="goldText">Sarlat</span>, le terrain garde la main.</h2>
+          <p class="lead">
+            DIGIYLYFE reste une seule maison. Mais chaque territoire a sa porte,
+            son langage, ses usages, son rythme.
+          </p>
+
+          <div class="cards2">
+            <article class="card big">
+              <span class="icon">🇸🇳</span>
+              <div>
+                <h3>Sénégal / Afrique</h3>
+                <p>WhatsApp, Wave, QR, contact direct, économie locale, pros du terrain.</p>
+              </div>
+              <small>Présence digitale enracinée · Paiement direct · 0% commission</small>
+            </article>
+
+            <article class="card big">
+              <span class="icon">🇫🇷</span>
+              <div>
+                <h3>France</h3>
+                <p>Petits pros, artisans, commerces, locations, services locaux, lien direct client.</p>
+              </div>
+              <small>Simplicité · visibilité locale · moins de dépendance aux plateformes</small>
+            </article>
+          </div>
+
+          <p class="note">
+            Une seule idée : rendre les activités locales visibles, organisées et payées directement.
+          </p>
         </div>
-      </section>
 
-      <section id="activite" class="section">
-        <h3>J’ai une activité, <span>je veux être visible.</span></h3>
-        <p>Une activité locale n’a pas besoin d’une usine. Elle a besoin d’être trouvée, comprise, contactée et payée directement.</p>
-        <div class="tools">
-          <a class="tool" href="#hub"><strong>🚕 Je conduis</strong><span>Tarifs, trajets, fiche chauffeur.</span></a>
-          <a class="tool" href="#hub"><strong>🏡 Je loue</strong><span>Lieu, dates, réservations.</span></a>
-          <a class="tool" href="#hub"><strong>🛍️ Je vends</strong><span>Boutique, produits, demandes.</span></a>
-          <a class="tool" href="#hub"><strong>💳 J’encaisse</strong><span>Caisse simple et suivi.</span></a>
-          <a class="tool" href="#hub"><strong>🛠️ Je propose mes services</strong><span>Présenter son savoir-faire.</span></a>
-          <a class="tool" href="#hub"><strong>💰 Je suis mon argent</strong><span>Voir ce qui entre, sort et reste.</span></a>
+        <div class="paves">
+          <a class="pave" href="#chercher"><span class="miniIcon">👀</span><span><strong>Je cherche</strong><span>Un service maintenant</span></span></a>
+          <a class="pave" href="#activite"><span class="miniIcon">🧰</span><span><strong>Je travaille</strong><span>Choisir mon outil</span></span></a>
+          <a class="pave" href="#hub"><span class="miniIcon">🧭</span><span><strong>Passer à l’action</strong><span>Direction HUB</span></span></a>
+          <a class="pave" href="#accueil"><span class="miniIcon">🏠</span><span><strong>Accueil</strong><span>Retour au début</span></span></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section promise">
-        <h3>0% commission. <span>Paiement direct.</span></h3>
-        <p>
-          DIGIYLYFE ne garde pas l’argent du professionnel. Le client contacte, réserve ou paie directement.
-          DIGIY aide le pro à être visible, organisé et choisi.
-        </p>
-      </section>
+    <!-- ÉCRAN 3 -->
+    <section class="snap" id="chercher">
+      <div class="screen">
+        <div class="panel">
+          <span class="kicker">Pour le public</span>
+          <h2>Trouver une vraie personne, pas se perdre dans une plateforme.</h2>
+          <p class="lead">
+            DIGIYLYFE oriente vers des pros locaux : chauffeur, logement,
+            réservation, boutique, artisan, lieu à découvrir.
+          </p>
 
-      <section id="hub" class="section hub">
-        <h3>DIGIY HUB, <span>le passage à l’action.</span></h3>
-        <p>
-          La vitrine explique. Le HUB oriente : choisir son outil, voir les packs, activer un abonnement,
-          retrouver son espace ou rejoindre le bon module.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="https://digiy-hub.github.io/digiy-hub/" target="_blank" rel="noopener">🏢 Entrer dans le HUB DIGIY</a>
-          <a class="btn gold" href="https://wa.me/221771342889" target="_blank" rel="noopener">🤝 Contacter DIGIY</a>
+          <div class="cards4">
+            <a class="card" href="#hub">
+              <span class="icon">🚕</span>
+              <h3>Chauffeur</h3>
+              <p>Voir un trajet, un contact, un tarif clair.</p>
+            </a>
+            <a class="card" href="#hub">
+              <span class="icon">🏡</span>
+              <h3>Logement</h3>
+              <p>Repérer un lieu, contacter le propriétaire.</p>
+            </a>
+            <a class="card" href="#hub">
+              <span class="icon">📅</span>
+              <h3>Réserver</h3>
+              <p>Choisir un moment, éviter les longs échanges.</p>
+            </a>
+            <a class="card" href="#hub">
+              <span class="icon">🛍️</span>
+              <h3>Boutique</h3>
+              <p>Voir, contacter, acheter sans détour.</p>
+            </a>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="#hub">🧭 Entrer dans le HUB DIGIY</a>
+            <a class="btn" href="#circuler">🤝 Suggérer un pro</a>
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <h3>L’esprit avant <span>l’outil.</span></h3>
-        <p>
-          Avant les boutons, il y a une vision : le terrain garde la main. DIGIYLYFE complète WhatsApp avec une présence digitale
-          et des logiciels métier simples. Les pros restent visibles, travaillent mieux et reçoivent leur argent directement.
-        </p>
-        <div class="actions">
-          <a class="btn gold" href="https://digiylyfe.net/" target="_blank" rel="noopener">🎧 Lire / écouter la vision</a>
+        <div class="paves">
+          <a class="pave" href="#activite"><span class="miniIcon">🏢</span><span><strong>Côté activité</strong><span>Je suis un pro</span></span></a>
+          <a class="pave" href="#promesse"><span class="miniIcon">💸</span><span><strong>0% commission</strong><span>Pourquoi c’est différent</span></span></a>
+          <a class="pave" href="#territoires"><span class="miniIcon">🌍</span><span><strong>Territoires</strong><span>Afrique · France</span></span></a>
+          <a class="pave" href="#hub"><span class="miniIcon">🧭</span><span><strong>HUB</strong><span>Accès pratique</span></span></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="circuler" class="section">
-        <h3>Fais circuler <span>DIGIY.</span></h3>
-        <p>Utilise le site, partage le lien, recommande un pro sérieux. Le terrain vit quand les clients trouvent les bonnes personnes.</p>
-        <div class="grid">
-          <article class="card"><span class="emoji">1️⃣</span><h4>Utilise le site</h4><p>Trouve un chauffeur, un logement, un artisan, une boutique ou un service autour de toi.</p></article>
-          <article class="card"><span class="emoji">2️⃣</span><h4>Partage DIGIY</h4><p>Envoie le lien à quelqu’un qui cherche ou à quelqu’un qui travaille.</p></article>
-          <article class="card"><span class="emoji">3️⃣</span><h4>Recommande un pro</h4><p>Tu connais quelqu’un de sérieux ? Envoie son contact, le terrain le révélera.</p></article>
-          <article class="card"><span class="emoji">∞</span><h4>Le terrain garde la main</h4><p>De Saly à Sarlat, DIGIYLYFE avance doucement, mais solidement.</p></article>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="https://wa.me/?text=Découvre%20DIGIYLYFE%20:%20https://digiylyfe.com/" target="_blank" rel="noopener">📤 Partager sur WhatsApp</a>
-          <a class="btn gold" href="https://wa.me/221771342889?text=Bonjour%20DIGIY%2C%20je%20veux%20sugg%C3%A9rer%20un%20pro%20s%C3%A9rieux." target="_blank" rel="noopener">🤝 Suggérer un pro</a>
-        </div>
-      </section>
+    <!-- ÉCRAN 4 -->
+    <section class="snap" id="activite">
+      <div class="screen">
+        <div class="panel">
+          <span class="kicker">Pour le professionnel</span>
+          <h2>Tu travailles déjà. DIGIY t’aide à être choisi.</h2>
+          <p class="lead">
+            Une présence digitale simple, des gestes métier clairs,
+            et un accès vers Mon argent quand il faut suivre ce qui entre et sort.
+          </p>
 
-      <footer class="footer">
-        <strong>DIGIYLYFE</strong> · 0% commission · paiement direct · contact utile · territoire vivant<br />
-        L’Afrique enracinée, connectée au monde ∞ · De Saly à Sarlat, une même mission.
-      </footer>
-    </div>
+          <div class="cards4">
+            <a class="card" href="#hub"><span class="icon">🚕</span><h3>Je conduis</h3><p>Trajets, tarifs, contact direct.</p></a>
+            <a class="card" href="#hub"><span class="icon">🏡</span><h3>Je loue</h3><p>Lieu visible, dates, demandes.</p></a>
+            <a class="card" href="#hub"><span class="icon">🛒</span><h3>Je vends</h3><p>Boutique, produits, clients.</p></a>
+            <a class="card" href="#hub"><span class="icon">💵</span><h3>J’encaisse</h3><p>Caisse simple, ventes, suivi.</p></a>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="#hub">🏢 Choisir mon outil dans le HUB</a>
+            <a class="btn" href="#promesse">💸 Comprendre le 0%</a>
+          </div>
+        </div>
+
+        <div class="paves">
+          <a class="pave" href="#hub"><span class="miniIcon">🧭</span><span><strong>HUB DIGIY</strong><span>Choisir le bon outil</span></span></a>
+          <a class="pave" href="#promesse"><span class="miniIcon">🤲</span><span><strong>Paiement direct</strong><span>Le pro garde la main</span></span></a>
+          <a class="pave" href="#circuler"><span class="miniIcon">📣</span><span><strong>Faire connaître</strong><span>Partager DIGIY</span></span></a>
+          <a class="pave" href="#chercher"><span class="miniIcon">🗺️</span><span><strong>Côté public</strong><span>Voir les besoins</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉCRAN 5 -->
+    <section class="snap" id="promesse">
+      <div class="screen">
+        <div class="panel">
+          <span class="kicker">La promesse claire</span>
+          <h2><span class="goldText">0% commission.</span> Paiement direct au professionnel.</h2>
+          <p class="lead">
+            DIGIYLYFE ne garde pas l’argent du pro.
+            Le client contacte, réserve ou paie directement le professionnel.
+          </p>
+          <p class="text">
+            DIGIY sert à être visible, organisé et choisi. Pas à enfermer la relation.
+            Le terrain garde son client, son contact, son argent.
+          </p>
+
+          <div class="cards3">
+            <article class="card">
+              <span class="icon">🤝</span>
+              <h3>Contact direct</h3>
+              <p>Le client arrive chez le professionnel, pas dans une cage.</p>
+            </article>
+            <article class="card">
+              <span class="icon">💸</span>
+              <h3>Argent direct</h3>
+              <p>Le paiement reste entre le client et le pro.</p>
+            </article>
+            <article class="card">
+              <span class="icon">🧠</span>
+              <h3>Outils simples</h3>
+              <p>Le logiciel aide, mais l’humain reste maître.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="paves">
+          <a class="pave" href="#hub"><span class="miniIcon">🧭</span><span><strong>Passer au HUB</strong><span>Voir les entrées utiles</span></span></a>
+          <a class="pave" href="#activite"><span class="miniIcon">🏢</span><span><strong>Je suis pro</strong><span>Choisir un outil</span></span></a>
+          <a class="pave" href="https://digiylyfe.net/" target="_blank" rel="noopener"><span class="miniIcon">📖</span><span><strong>La revue</strong><span>Lire la vision</span></span></a>
+          <a class="pave" href="#circuler"><span class="miniIcon">📤</span><span><strong>Partager</strong><span>Faire circuler</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉCRAN 6 -->
+    <section class="snap" id="hub">
+      <div class="screen">
+        <div class="panel">
+          <span class="kicker">Le comptoir d’action</span>
+          <h2>DIGIY HUB fait passer à l’action.</h2>
+          <p class="lead">
+            La vitrine raconte la mission. Le HUB aide à choisir un outil,
+            voir les packs, activer, retrouver un accès et aller vers le bon module.
+          </p>
+
+          <div class="cards3">
+            <a class="card" href="https://digiy-hub.pages.dev/" target="_blank" rel="noopener">
+              <span class="icon">🧭</span>
+              <h3>Entrer dans le HUB</h3>
+              <p>Le carrefour pour avancer sans détour.</p>
+              <small>Remplace ce lien par ton URL HUB finale si besoin.</small>
+            </a>
+            <a class="card" href="#activite">
+              <span class="icon">🧰</span>
+              <h3>Choisir un outil</h3>
+              <p>Conduire, louer, vendre, encaisser, réserver, proposer.</p>
+            </a>
+            <a class="card" href="https://wa.me/221771342889" target="_blank" rel="noopener">
+              <span class="icon">💬</span>
+              <h3>WhatsApp DIGIY</h3>
+              <p>Demander, suggérer, faire entrer un pro sérieux.</p>
+            </a>
+          </div>
+
+          <p class="note">
+            .com = vitrine légère · HUB = orientation · modules = ateliers métier.
+          </p>
+        </div>
+
+        <div class="paves">
+          <a class="pave" href="#accueil"><span class="miniIcon">🏠</span><span><strong>Accueil</strong><span>Revoir la promesse</span></span></a>
+          <a class="pave" href="#territoires"><span class="miniIcon">🌍</span><span><strong>Territoires</strong><span>Afrique · France</span></span></a>
+          <a class="pave" href="#promesse"><span class="miniIcon">💸</span><span><strong>0%</strong><span>Le cœur DIGIY</span></span></a>
+          <a class="pave" href="#circuler"><span class="miniIcon">📣</span><span><strong>Circuler</strong><span>Partager le site</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉCRAN 7 -->
+    <section class="snap" id="circuler">
+      <div class="screen">
+        <div class="panel">
+          <span class="kicker">Lecture · écoute · terrain</span>
+          <h2>Fais circuler DIGIY. Fais vivre les pros.</h2>
+          <p class="lead">
+            La base, c’est la clientèle : les gens qui cherchent, appellent,
+            réservent, achètent. DIGIY vit quand le lien circule.
+          </p>
+
+          <div class="cards3">
+            <article class="card">
+              <span class="icon">1️⃣</span>
+              <h3>Utilise le site</h3>
+              <p>Trouve un chauffeur, un logement, un artisan, une boutique ou un service.</p>
+            </article>
+            <article class="card">
+              <span class="icon">2️⃣</span>
+              <h3>Partage DIGIY</h3>
+              <p>Envoie le lien à quelqu’un qui cherche ou à quelqu’un qui travaille.</p>
+            </article>
+            <article class="card">
+              <span class="icon">3️⃣</span>
+              <h3>Recommande un pro</h3>
+              <p>Tu connais quelqu’un de sérieux ? Le terrain peut le révéler.</p>
+            </article>
+          </div>
+
+          <div class="footerLinks" aria-label="Liens utiles">
+            <div class="footerBox">
+              <strong>Découvrir</strong>
+              <a href="#accueil">Accueil</a>
+              <a href="#territoires">Afrique / France</a>
+              <a href="https://digiylyfe.net/" target="_blank" rel="noopener">Revue DIGIYLYFE</a>
+            </div>
+            <div class="footerBox">
+              <strong>Agir</strong>
+              <a href="#hub">Entrer dans le HUB</a>
+              <a href="#activite">J’ai une activité</a>
+              <a href="https://wa.me/221771342889" target="_blank" rel="noopener">Contacter DIGIY</a>
+            </div>
+            <div class="footerBox">
+              <strong>Outils</strong>
+              <a href="#chercher">Trouver un service</a>
+              <a href="#promesse">0% commission</a>
+              <a href="#hub">Choisir mon outil</a>
+            </div>
+            <div class="footerBox">
+              <strong>Faire circuler</strong>
+              <a href="https://wa.me/?text=Découvre%20DIGIYLYFE%20:%20https://digiylyfe.com/" target="_blank" rel="noopener">Partager WhatsApp</a>
+              <a href="https://digiylyfe.com/" target="_blank" rel="noopener">Site officiel</a>
+              <a href="#accueil">Retour haut</a>
+            </div>
+          </div>
+
+          <p class="tiny">
+            DIGIYLYFE — 0% commission · paiement direct · contact utile · territoire vivant · BY DIGIYLYFE
+          </p>
+        </div>
+
+        <div class="paves">
+          <a class="pave" href="#accueil"><span class="miniIcon">🏠</span><span><strong>Retour accueil</strong><span>Recommencer le parcours</span></span></a>
+          <a class="pave" href="#hub"><span class="miniIcon">🧭</span><span><strong>HUB</strong><span>Passer à l’action</span></span></a>
+          <a class="pave" href="https://wa.me/221771342889" target="_blank" rel="noopener"><span class="miniIcon">💬</span><span><strong>WhatsApp</strong><span>Contacter DIGIY</span></span></a>
+          <a class="pave" href="https://digiylyfe.net/" target="_blank" rel="noopener"><span class="miniIcon">📖</span><span><strong>Revue</strong><span>Lire la vision</span></span></a>
+        </div>
+      </div>
+    </section>
   </main>
-  <a class="mobileFab" href="#hub" aria-label="Entrer dans le HUB DIGIY">🏢</a>
+
+  <nav class="bottomNav" aria-label="Navigation principale">
+    <a class="navBtn" href="#accueil"><b>🏠</b>Accueil</a>
+    <a class="navBtn" href="#territoires"><b>🌍</b>Terrains</a>
+    <a class="navBtn" href="#chercher"><b>🗺️</b>Trouver</a>
+    <a class="navBtn" href="#activite"><b>🏢</b>Activité</a>
+    <a class="navBtn" href="#hub"><b>🧭</b>HUB</a>
+  </nav>
+
+  <script>
+    (function(){
+      const links = Array.from(document.querySelectorAll(".navBtn"));
+      const sections = links
+        .map(a => document.querySelector(a.getAttribute("href")))
+        .filter(Boolean);
+
+      const setActive = () => {
+        const mid = window.innerHeight / 2;
+        let activeId = "accueil";
+        sections.forEach(sec => {
+          const r = sec.getBoundingClientRect();
+          if(r.top <= mid && r.bottom >= mid) activeId = sec.id;
+        });
+        links.forEach(a => {
+          a.classList.toggle("active", a.getAttribute("href") === "#" + activeId);
+        });
+      };
+
+      window.addEventListener("scroll", setActive, {passive:true});
+      window.addEventListener("resize", setActive);
+      setActive();
+    })();
+  </script>
 </body>
 </html>
-
-
