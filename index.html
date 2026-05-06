@@ -5,24 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Restaurant Teranga Saly</title>
   <style>
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#071512;color:#f7fff9}a{color:inherit}.wrap{max-width:1040px;margin:auto;padding:22px}.hero{min-height:82vh;display:grid;align-items:center}.card{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:32px;box-shadow:0 24px 70px rgba(0,0,0,.35)}.kicker{color:#ffe7a8;font-weight:800}.title{font-size:clamp(38px,8vw,78px);line-height:.92;margin:12px 0}.lead{color:#c7ddd3;font-size:18px;line-height:1.6}.nav{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.nav a,.btn{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:11px 14px;text-decoration:none;background:rgba(255,255,255,.06)}.btn{display:inline-block;background:#f5c76b;color:#143226;font-weight:900;margin-top:12px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}.box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:18px}.box p,.box li{color:#c7ddd3;line-height:1.5}.section{padding:24px 0}input,textarea{width:100%;padding:13px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.22);color:#fff;margin:6px 0 12px}button{padding:13px 16px;border:0;border-radius:16px;background:#f5c76b;color:#143226;font-weight:900}@media(max-width:760px){.grid{grid-template-columns:1fr}.card{padding:22px}}
+    :root{--bg:#071512;--card:#102b24;--line:rgba(255,255,255,.13);--text:#f7fff9;--muted:#c7ddd3;--gold:#f5c76b;--green:#16c784}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 10% 0,rgba(245,199,107,.18),transparent 34%),linear-gradient(135deg,var(--bg),#03100d);color:var(--text)}a{color:inherit}.wrap{max-width:1080px;margin:auto;padding:22px}.hero{min-height:86vh;display:grid;align-items:center}.card,.box{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.32)}.kicker{color:#ffe7a8;font-weight:900}.title{font-size:clamp(38px,8vw,78px);line-height:.92;margin:12px 0}.lead{color:var(--muted);font-size:18px;line-height:1.6}.nav{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.nav a,.btn{border:1px solid var(--line);border-radius:999px;padding:11px 14px;text-decoration:none;background:rgba(255,255,255,.06)}.btn{display:inline-block;background:var(--gold);color:#143226;font-weight:950;margin-top:12px}.section{padding:28px 0}.section h2{font-size:clamp(26px,4vw,42px);margin:0 0 14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.box p,.box li{color:var(--muted);line-height:1.55}.dish span{display:inline-block;color:#ffe7a8;font-weight:900;font-size:13px}.info{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form input,.form textarea{width:100%;padding:13px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.22);color:#fff;margin:6px 0 12px}.form button{padding:13px 16px;border:0;border-radius:16px;background:var(--green);color:#06231a;font-weight:950}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:9px 12px;margin:5px;background:rgba(255,255,255,.05);color:var(--muted)}footer{padding:30px 0;color:var(--muted);font-size:13px}@media(max-width:760px){.grid,.info{grid-template-columns:1fr}.card,.box{padding:22px}.hero{min-height:auto;padding-top:35px}}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <section class="hero">
+    <section id="accueil" class="hero">
       <div class="card">
         <div class="kicker">Saly, Sénégal · Premium, mobile, chaleureux, africain, clair, rassurant, adapté aux touristes et aux clients locaux.</div>
         <h1 class="title">Restaurant Teranga Saly</h1>
         <p class="lead">Restaurant familial sénégalais avec spécialités locales, poissons grillés, plats du jour et service de réservation.</p>
         <p class="lead">Présenter le restaurant, afficher le menu, mettre en avant les spécialités, permettre aux clients de réserver une table et contacter facilement l’établissement par WhatsApp.</p>
-        <div class="nav"><a href="#accueil">Accueil</a><a href="#menu">Menu</a><a href="#plat_detail">Plat détail</a><a href="#commande">Commande</a><a href="#reservation">Réservation</a><a href="#contact">Contact</a></div>
+        <p class="lead"><strong>Pour :</strong> Clients locaux, familles, touristes, diaspora, travailleurs de passage et groupes souhaitant réserver une table.</p>
+        <div class="nav"><a href="#accueil">Accueil</a><a href="#menu">Menu</a><a href="#plat_detail">Plat détail</a><a href="#commande">Commande</a><a href="#reservation">Réservation</a><a href="#contact">Contact</a><a href="#temoignages">Témoignages</a><a href="#galerie">Galerie</a></div>
         <a class="btn" href="#reservation">Réserver / contacter</a>
       </div>
     </section>
-    <section id="menu" class="section"><h2>Ce que nous proposons</h2><div class="grid"><div class="box"><h3>Spécialités</h3><p>Présente ici les plats, produits ou services principaux.</p></div><div class="box"><h3>Contact direct</h3><p>Ajoute le WhatsApp, le téléphone ou le formulaire client.</p></div><div class="box"><h3>Confiance</h3><p>Ajoute photos, avis, horaires et informations pratiques.</p></div></div></section>
-    <section id="reservation" class="section"><h2>Demande client</h2><div class="box"><label>Nom</label><input placeholder="Votre nom"><label>Téléphone</label><input placeholder="Votre WhatsApp"><label>Message</label><textarea placeholder="Votre demande"></textarea><button>Envoyer la demande</button></div></section>
-    <section class="section"><h2>Besoins particuliers</h2><div class="box"><ul><li>Témoignages</li><li>Galerie</li><li>Tarifs</li><li>À propos</li><li>Événements privés</li><li>FAQ</li></ul></div></section>
+
+    <section id="menu" class="section">
+      <h2>Menu et spécialités</h2>
+      <p class="lead">Une première vitrine claire pour donner envie, rassurer et guider le client vers l’action.</p>
+      <div class="grid menu-grid"><div class="box dish"><span>Plat local</span><h3>Thiéboudienne maison</h3><p>Un plat signature pour montrer la cuisine sénégalaise et rassurer le client.</p></div><div class="box dish"><span>Grillade</span><h3>Poisson grillé</h3><p>Idéal pour les touristes, familles et clients qui veulent manger frais à Saly.</p></div><div class="box dish"><span>Réservation</span><h3>Table de groupe</h3><p>Prévoir une demande simple avec nombre de personnes, date et heure souhaitée.</p></div></div>
+    </section>
+
+    <section id="plat_detail" class="section"><h2>Plat détail</h2><div class="box"><p>Présente ici une fiche claire : photo du plat, description courte, prix, disponibilité et bouton pour commander ou réserver.</p></div></section>\n<section id="commande" class="section"><h2>Commande</h2><div class="box"><p>Permets au client de choisir un plat, laisser son nom, son WhatsApp et envoyer une demande simple.</p></div></section>\n<section id="temoignages" class="section"><h2>Témoignages</h2><div class="box"><p>Affiche les retours clients pour rassurer les nouveaux visiteurs.</p></div></section>\n<section id="galerie" class="section"><h2>Galerie</h2><div class="box"><p>Ajoute quelques photos fortes : salle, terrasse, plats, équipe et ambiance du lieu.</p></div></section>\n<section id="tarifs" class="section"><h2>Tarifs</h2><div class="box"><p>Affiche les prix importants, les formules groupe, les menus du jour et les conditions d’acompte.</p></div></section>\n<section id="a_propos" class="section"><h2>À propos</h2><div class="box"><p>Complète cette section avec les informations utiles pour le client.</p></div></section>\n<section id="evenements_prives" class="section"><h2>Événements privés</h2><div class="box"><p>Explique les repas de groupe, anniversaires, repas d’entreprise ou événements privés.</p></div></section>\n<section id="faq" class="section"><h2>FAQ</h2><div class="box"><p>Réponds aux questions simples : horaires, réservation, paiement, accès, groupes et contact.</p></div></section>
+
+    <section id="reservation" class="section">
+      <h2>Réserver simplement</h2>
+      <div class="info">
+        <div class="box form"><label>Nom</label><input placeholder="Votre nom"><label>Téléphone</label><input placeholder="Votre WhatsApp"><label>Message</label><textarea placeholder="Date, heure, nombre de personnes ou demande particulière"></textarea><button>Envoyer la demande</button></div>
+        <div class="box"><h3>Informations pratiques</h3><p>Ajoute ici les horaires, le quartier, le repère, le téléphone et le lien WhatsApp officiel.</p><p>Le client doit comprendre vite quoi faire : appeler, écrire ou réserver.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact et besoins particuliers</h2>
+      <div class="box"><h3>Besoins particuliers</h3><ul><li>Réservation de table</li><li>Affichage du menu par catégorie</li><li>Photos des plats</li><li>Bouton WhatsApp</li><li>Gestion des horaires</li><li>Gestion des commandes</li><li>Acompte pour les groupes</li><li>Galerie du restaurant</li></ul></div>
+    </section>
+
+    <footer>Page générée par DIGIY Projet Maison · BY DIGIYLYFE</footer>
   </main>
 </body>
 </html>
