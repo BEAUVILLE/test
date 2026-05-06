@@ -123,6 +123,34 @@
     #vision-article .bridge-mini:hover{border-color:rgba(246,196,83,.60);background:rgba(246,196,83,.16);}
     #digiy-circulation .circ-actions .btn{min-width:180px;}
 
+
+
+    /* CLIP OFFICIEL — bloc vidéo visible */
+    #clip-officiel{margin:16px 18px 0;padding:20px;border-radius:28px;border:1px solid rgba(246,196,83,.34);background:radial-gradient(820px 320px at 12% 0%,rgba(246,196,83,.16),transparent 60%),radial-gradient(680px 260px at 88% 18%,rgba(0,166,81,.16),transparent 62%),linear-gradient(180deg,rgba(10,48,34,.86),rgba(8,28,20,.80));box-shadow:0 18px 60px rgba(0,0,0,.30),0 0 0 1px rgba(246,196,83,.06);overflow:hidden;scroll-margin-top:110px;}
+    #clip-officiel .clip-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;border:1px solid rgba(246,196,83,.36);background:rgba(246,196,83,.11);color:#fff3cf;font-family:var(--fontA);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;}
+    #clip-officiel .clip-title{margin:12px 0 0;font-family:var(--fontA);font-size:clamp(26px,4vw,44px);font-weight:900;line-height:1.02;letter-spacing:-.04em;color:#fff;}
+    #clip-officiel .clip-title span{color:var(--gold);}
+    #clip-officiel .clip-text{margin:10px 0 0;max-width:76ch;color:#dbe8e0;font-size:15px;line-height:1.7;font-weight:800;}
+    #clip-officiel .clip-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:stretch;margin-top:16px;}
+    #clip-officiel .clip-frame{position:relative;min-height:310px;border-radius:24px;border:1px solid rgba(246,196,83,.38);background:#06140f;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.38),0 0 0 5px rgba(246,196,83,.055);}
+    #clip-officiel .clip-frame iframe,#clip-officiel .clip-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000;}
+    #clip-officiel .clip-poster{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;overflow:hidden;}
+    #clip-officiel .clip-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.06) contrast(1.04);transform:scale(1.01);}
+    #clip-officiel .clip-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.58));}
+    #clip-officiel .clip-play{position:relative;z-index:2;width:88px;height:88px;border-radius:999px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(246,196,83,.62);background:linear-gradient(135deg,rgba(246,196,83,.94),rgba(34,197,94,.92));color:#06140f;font-size:36px;font-weight:900;box-shadow:0 18px 40px rgba(0,0,0,.42),0 0 0 8px rgba(246,196,83,.12);}
+    #clip-officiel .clip-caption{position:absolute;left:16px;right:16px;bottom:14px;z-index:3;padding:13px 14px;border-radius:18px;border:1px solid rgba(255,255,255,.16);background:rgba(4,19,13,.72);backdrop-filter:blur(10px);}
+    #clip-officiel .clip-caption strong{display:block;font-family:var(--fontA);font-size:17px;font-weight:900;color:#fff3cf;line-height:1.25;}
+    #clip-officiel .clip-caption span{display:block;margin-top:4px;font-size:13px;line-height:1.45;color:rgba(248,250,252,.82);font-weight:800;}
+    #clip-officiel .clip-side{padding:16px;border-radius:24px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));display:flex;flex-direction:column;justify-content:center;gap:10px;}
+    #clip-officiel .clip-side-title{font-family:var(--fontA);font-size:18px;font-weight:900;color:#fff3cf;line-height:1.25;}
+    #clip-officiel .clip-side-text{font-size:13.5px;line-height:1.6;color:rgba(248,250,252,.78);font-weight:800;}
+    #clip-officiel .clip-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+    #clip-officiel .clip-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 14px;border-radius:14px;border:1px solid rgba(246,196,83,.38);background:rgba(246,196,83,.10);color:#fff3cf;font-family:var(--fontA);font-size:13px;font-weight:900;text-decoration:none;transition:transform .15s,border-color .15s,background .15s;}
+    #clip-officiel .clip-btn:hover{transform:translateY(-1px);border-color:rgba(246,196,83,.62);background:rgba(246,196,83,.16);}
+    #clip-officiel .clip-btn.main{border-color:rgba(246,196,83,.76);background:linear-gradient(135deg,#f6c453,#22c55e);color:#06140f;box-shadow:0 12px 28px rgba(0,0,0,.28);}
+    #clip-officiel .clip-note{margin-top:12px;padding:12px 14px;border-radius:18px;border:1px dashed rgba(246,196,83,.28);background:rgba(246,196,83,.07);color:#fff0c8;font-size:12.5px;line-height:1.55;font-weight:800;}
+    @media(max-width:760px){#clip-officiel .clip-layout{grid-template-columns:1fr;}#clip-officiel .clip-frame{min-height:250px;}#clip-officiel .clip-side{padding:14px;}}
+    @media(max-width:640px){#clip-officiel{margin:14px 12px 0;padding:16px;border-radius:24px;}#clip-officiel .clip-frame{min-height:220px;border-radius:22px;}#clip-officiel .clip-play{width:72px;height:72px;font-size:30px;}#clip-officiel .clip-actions .clip-btn{width:100%;}#clip-officiel .clip-caption{left:10px;right:10px;bottom:10px;padding:11px 12px;}}
     @media(max-width:640px){#vision-article{margin:14px 12px 0;padding:16px;align-items:stretch;}#vision-article .bridge-visual{width:100%;max-width:520px;margin:0 auto 2px;}#vision-article .bridge-links{width:100%;}#vision-article .bridge-mini{width:100%;text-align:center;}}
 
     /* HERO */
@@ -140,8 +168,10 @@
     #intro-bonheur .btnx{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 20px;border-radius:14px;font-weight:900;text-decoration:none;transition:transform .18s ease,opacity .18s ease;font-family:var(--fontA);letter-spacing:.2px;border:1px solid transparent;cursor:pointer;font-size:15px;}
     #intro-bonheur .btnx:hover{transform:translateY(-2px);opacity:.97;}
     #intro-bonheur .btnx-primary{background:linear-gradient(180deg,#22c55e 0%,#16a34a 100%);color:#07130f;box-shadow:0 16px 36px rgba(0,133,63,.26);}
-    #intro-bonheur .btnx-secondary{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.12);}
-    #intro-bonheur .btnx-gold{background:linear-gradient(180deg,rgba(246,196,83,.18),rgba(246,196,83,.08));color:#fff3cf;border-color:rgba(246,196,83,.34);}
+    #intro-bonheur .btnx-gold{background:linear-gradient(180deg,#f6c453 0%,#e7ae23 100%);color:#1f1500;border-color:rgba(246,196,83,.55);box-shadow:0 16px 36px rgba(246,196,83,.24);}
+    #intro-bonheur .btnx-sky{background:linear-gradient(180deg,#7dd3fc 0%,#38bdf8 100%);color:#04131d;border-color:rgba(125,211,252,.55);box-shadow:0 16px 36px rgba(56,189,248,.22);}
+    #intro-bonheur .btnx-violet{background:linear-gradient(180deg,#c4b5fd 0%,#8b5cf6 100%);color:#12071e;border-color:rgba(196,181,253,.55);box-shadow:0 16px 36px rgba(139,92,246,.22);}
+    #intro-bonheur .btnx-red{background:linear-gradient(180deg,#fda4af 0%,#fb7185 100%);color:#24070d;border-color:rgba(253,164,175,.55);box-shadow:0 16px 36px rgba(251,113,133,.22);}
     #intro-bonheur .heroLink{display:inline-block;margin-top:4px;color:#fff3cf;font-weight:900;text-decoration:none;border-bottom:1px solid rgba(246,196,83,.35);font-family:var(--fontA);}
     #intro-bonheur .mini{margin-top:14px;font-size:13.5px;line-height:1.65;color:#dbe8e0;max-width:74ch;margin-left:auto;margin-right:auto;}
     #intro-bonheur .mini strong{color:#f6c453;}
@@ -587,6 +617,7 @@
         <a class="star" href="#favoritesSection">⭐ Mes favoris</a>
         <a class="gold" href="#esprit-digiylyfe">🎧 Esprit</a>
         <a href="#deux-terrains">🌍 Deux terrains</a>
+        <a class="gold" href="#clip-officiel">🎬 Clip</a>
         <a href="#vision-article">🧭 Vision</a>
         <a href="#digiy-circulation">📣 Faire circuler</a>
         <a class="green" href="#departements">🧭 Départements</a>
@@ -612,9 +643,9 @@
 
           <div class="cta">
             <a class="btnx btnx-primary" href="#toutes-apps">🌍 Voir toutes les applications</a>
-            <a class="btnx btnx-gold" href="#departements">🧭 Choisir par département</a>
-            <button class="btnx btnx-secondary" type="button" onclick="window.digiyStartAudio&&window.digiyStartAudio()">🎧 Écouter la vision</button>
-            <a class="btnx btnx-secondary" href="https://pro-espace.digiylyfe.com/" target="_blank" rel="noopener noreferrer">🏢 Mon espace pro</a>
+            <a class="btnx btnx-sky" href="#departements">🧭 Choisir par département</a>
+            <a class="btnx btnx-violet" href="https://vision.digiylyfe.com/" target="_blank" rel="noopener noreferrer">🎧 Écouter la vision</a>
+            <a class="btnx btnx-red" href="https://pro-espace.digiylyfe.com/" target="_blank" rel="noopener noreferrer">🏢 Mon espace pro</a>
             <a class="btnx btnx-gold" href="https://tarifs.digiylyfe.com/" target="_blank" rel="noopener noreferrer">📦 Nos tarifs</a>
           </div>
           <a class="heroLink" href="https://digiylyfe.net/" target="_blank" rel="noopener noreferrer">digiylyfe.net — la revue qui raconte la vision</a>
@@ -695,7 +726,31 @@
         </div>
         <div class="dt-clip">
           <div class="dt-clip-text">🎬 Le clip officiel DIGIYLYFE<span>De Saly à Sarlat — territoire vivant · 0% commission · paiement direct</span></div>
-          <a class="dt-clip-btn" href="https://digiylyfe.net/" target="_blank" rel="noopener noreferrer">▶️ Voir la revue DIGIY</a>
+          <a class="dt-clip-btn" href="#clip-officiel">▶️ Voir le clip ici</a>
+        </div>
+      </section>
+
+      <section id="clip-officiel" aria-label="Clip officiel DIGIYLYFE">
+        <div class="clip-kicker">🎬 CLIP OFFICIEL DIGIYLYFE</div>
+        <h2 class="clip-title">De Saly à Sarlat — <span>territoire vivant.</span></h2>
+        <p class="clip-text">Ici, la vidéo doit être visible tout de suite : une image forte, un bouton lecture, et le message clair — <strong>0% commission, paiement direct, relation chez le pro.</strong></p>
+        <div class="clip-layout">
+          <div class="clip-frame" id="digiyOfficialClipFrame" data-video-url="">
+            <a class="clip-poster" href="https://digiylyfe.net/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le clip officiel DIGIYLYFE">
+              <img src="https://digiylyfe.net/wp-content/uploads/2026/04/ChatGPT-Image-30-avr.-2026-21_41_18.png" alt="Clip officiel DIGIYLYFE — territoire vivant" loading="lazy" decoding="async"/>
+              <span class="clip-play">▶</span>
+              <span class="clip-caption"><strong>Voir le clip officiel DIGIYLYFE</strong><span>Le terrain garde la main · 0% commission · paiement direct.</span></span>
+            </a>
+          </div>
+          <aside class="clip-side">
+            <div class="clip-side-title">Une vidéo, pas juste un lien.</div>
+            <div class="clip-side-text">Le visiteur doit sentir l’âme avant de descendre dans les applications. Ce bloc sert de scène propre pour le clip officiel.</div>
+            <div class="clip-actions">
+              <a class="clip-btn main" href="https://digiylyfe.net/" target="_blank" rel="noopener noreferrer">▶️ Ouvrir la vidéo</a>
+              <a class="clip-btn" href="https://esprit-digiylyfe.digiylyfe.com/" target="_blank" rel="noopener noreferrer">🎧 Écouter l’esprit</a>
+            </div>
+            <div class="clip-note">Quand tu me donnes le lien direct du fichier vidéo MP4, YouTube ou TikTok, je remplace ce bloc par un lecteur intégré qui joue directement sur la page.</div>
+          </aside>
         </div>
       </section>
 
